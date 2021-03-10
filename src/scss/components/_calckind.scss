@@ -1,0 +1,54 @@
+.calckind {
+  margin-top: 64px;
+  &__title {
+    text-align: end;
+    padding-right: 32px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+  }
+  &__wrapper {
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 560px;
+  }
+  &__png {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .furniture__item {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    background-color: $background;
+    width: 170px;
+    height: 171px;
+    padding: 8px 8px 12px 8px;
+    margin: 8px;
+    border-radius: 4px;
+    transition: 0.3s linear;
+    cursor: pointer;
+    &:hover {
+      transition: 0.3s linear;
+      box-shadow: 0 0 0 2px $color-yellow inset, 0 0 0 4px white inset;
+    }
+  }
+  .furniture__item-img {
+    display: flex;
+    height: 154px;
+    align-items: center;
+    justify-content: center;
+  }
+  .furniture__item-img img {
+    width: 75%;
+  }
+}

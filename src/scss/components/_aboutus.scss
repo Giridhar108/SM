@@ -1,0 +1,37 @@
+.aboutus {
+  margin-top: 40px;
+  &__wrapper {
+    display: flex;
+    align-items: flex-end;
+  }
+  &__img {
+    width: 100%;
+    max-width: 571px;
+    min-width: 471px;
+    height: auto;
+  }
+  &__description {
+    width: 497px;
+    margin-left: 24px;
+  }
+  &__title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 150%;
+  }
+  &__subtitle {
+    margin-top: 16px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 126%;
+  }
+  &__text {
+    margin-top: 24px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 126%;
+  }
+}

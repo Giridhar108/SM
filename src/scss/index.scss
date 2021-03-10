@@ -1,0 +1,20 @@
+
+$black: #333333;
+$background: #fbf9f8;
+$color-yellow: #FFD200;
+$color-white: #FCF7F7;
+
+
+@import 'libs/normalize';
+@import './components/all';
+@import 'fonts';
+
+.container {
+  margin: 0 auto;
+  max-width: 1138px;
+  padding: 0 16px;
+}
+
+.space {
+  height: 200px;
+}

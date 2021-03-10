@@ -1,0 +1,75 @@
+.footer {
+  margin-top: 144px;
+  padding-bottom: 64px;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__logo,
+  &__kinds,
+  &__menu,
+  &__contacts {
+    margin: 8px;
+  }
+
+  &__kinds-title,
+  &__menu-title,
+  &__contacts-title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+  }
+  &__logo {
+    min-width: 228px;
+  }
+  &__logo-svg {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo-text {
+    margin-left: 8px;
+    font-family: Port Lligat Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 39px;
+    color: rgba(41, 22, 65, 1);
+  }
+  &__logo-subtitle {
+    max-width: 215px;
+    margin-top: 12px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+  }
+  &__kinds {
+    width: 200px;
+  }
+  &__kinds-ul, &__menu-ul, &__contacts-ul {
+    margin-top: 12px;
+  }
+  &__kinds-re {
+    margin-top: 12px;
+  }
+  &__menu-item{
+    margin-top: 12px;
+  }
+  &__contacts {
+    width: 242px;
+  }
+  &__contacts-ul > li{
+    margin-top: 12px;
+  }
+  &__contacts-social {
+    display: flex;
+  }
+  &__contacts-social-item {
+    margin-right: 8px;
+  }
+  &__contacts-policy {
+    border-bottom: 1px solid $black;
+  }
+}
