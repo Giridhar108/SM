@@ -7,6 +7,7 @@ import {
   reduceItem,
   setOrderCount,
   setOrderItems,
+  delateOrderItems,
 } from "../redux/action/calculator";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -14,18 +15,19 @@ function Order() {
   const { register, errors, handleSubmit } = useForm();
   const dispatch = useDispatch();
   const orderItems = useSelector((state) => state.calculator.orderItems);
+
   const getLengthLs = () => {
     return localStorage.length;
   };
 
   const orederItems = () => {
     const numbers = orderItems.map((item) => item.number);
-    console.log(numbers);
     const result = [];
-    for (let i = 1; i <= localStorage.length; i = i + 1) {
+    for (let i = 1; i <= 20; i = i + 1) {
       if (localStorage.getItem(`${i}`)) {
         const item = JSON.parse(localStorage.getItem(`${i}`));
         result.push(item);
+        console.log(numbers, orderItems, !numbers.includes(item.number))
         if (!numbers.includes(item.number)) {
           dispatch(setOrderItems(item));
         }
@@ -42,6 +44,7 @@ function Order() {
 
   const deleteItem = (key) => {
     localStorage.removeItem(key);
+    dispatch(delateOrderItems(key))
   };
 
   return (
@@ -57,11 +60,11 @@ function Order() {
                   deleteItem(number);
                 };
                 return (
-                  <div className="calcyc__item">
-                    <div
-                      key={`${kind}_${style}_${cloth}_${color}_${filler}`}
-                      className="calcyc__wrapper-item"
-                    >
+                  <div
+                    className="calcyc__item"
+                    key={`${kind}_${style}_${cloth}_${color}_${filler}`}
+                  >
+                    <div className="calcyc__wrapper-item">
                       <div className="calcyc__title-inner">Вид:</div>
                       <div className="calcyc__choise">{kind}</div>
                       <div className="calcyc__title-inner">Стиль:</div>
@@ -128,7 +131,7 @@ function Order() {
                           />
                         </svg>
                       </div>
-                      <div className="calcyc__item-count-num">{ count }</div>
+                      <div className="calcyc__item-count-num">{count}</div>
                       <div className="calcyc__item-count-minus">
                         <svg
                           width="24"

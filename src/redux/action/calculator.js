@@ -38,13 +38,13 @@ export const reduceItem = () => ({
   payload: 1,
 });
 
-export const setOrderCount = () => ({
-  type: "ORDER_COUNT",
-  payload: 1,
-});
-
 export const setOrderItems = (item) => ({
   type: "ORDER_ITEMS",
+  payload: item,
+});
+
+export const delateOrderItems = (item) => ({
+  type: "DELETE_ORDER_ITEMS",
   payload: item,
 });
 

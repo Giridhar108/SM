@@ -5,7 +5,6 @@ const initialState = {
   color: null,
   filler: null,
   count: 0,
-  orderCount: 0,
   orderItems: [],
 };
 
@@ -65,6 +64,16 @@ const calculator = (state = initialState, action) => {
         filler: null,
         count: 0,
         orderItems: newItem,
+      };
+    }
+    case "DELETE_ORDER_ITEMS": {
+      const newItems = state.orderItems.filter(item => {
+        return item.number !== action.payload
+      })
+
+      return {
+        ...state,
+        orderItems: newItems,
       };
     }
     default:
