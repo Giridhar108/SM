@@ -1,5 +1,5 @@
 .main {
-
+  background-color: #fbf9f8;
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -50,55 +50,64 @@
     position: relative;
     flex-direction: column;
     justify-content: space-between;
-    z-index: -1;
+
   }
   &__right-create {
     display: flex;
     position: relative;
     flex-direction: column;
     justify-content: space-between;
-    z-index: -1;
+
   }
   &__right-recreate {
     display: flex;
     position: relative;
     flex-direction: column;
     justify-content: space-between;
-    z-index: -1;
   }
-  &__right::before {
-    content: "";
-    position: absolute;
-    background-color: $background;
-    width: 10000px;
-    height: 520px;
-    z-index: -1;
-    border-radius: 32px 0px 0px 4px;
-    top: -16px;
-    left: -400px;
-  }
-  &__right-create::before {
-    content: "";
-    position: absolute;
-    background-color: $background;
-    width: 10000px;
-    height: 520px;
-    z-index: -1;
-    border-radius: 32px 0px 0px 4px;
-    top: -16px;
-    left: -547px;
-  }
-  &__right-recreate::before {
-    content: "";
-    position: absolute;
-    background-color: $background;
-    width: 10000px;
-    height: 520px;
-    z-index: -1;
-    border-radius: 32px 0px 0px 4px;
-    top: -16px;
-    left: -524px;
-  }
+  // &__wrapper::before {
+  //   content: "";
+  //   position: absolute;
+  //   background-color: #fbf9f8;
+  //   width: 10000px;
+  //   height: 520px;
+  //   z-index: -1;
+  //   border-radius: 32px 0px 0px 4px;
+  //   top: 47px;
+  //   }
+  // &__right::before {
+  //   content: "";
+  //   position: absolute;
+  //   background-color: $background;
+  //   width: 10000px;
+  //   height: 520px;
+  //   z-index: -1;
+  //   border-radius: 32px 0px 0px 4px;
+  //   top: -16px;
+  //   left: -400px;
+  // }
+  // &__right-create::before {
+  //   content: "";
+  //   position: absolute;
+  //   background-color: $background;
+  //   width: 10000px;
+  //   height: 520px;
+  //   z-index: -1;
+  //   border-radius: 32px 0px 0px 4px;
+  //   top: -16px;
+  //   left: -547px;
+  // }
+  // &__right-recreate::before {
+  //   content: "";
+  //   position: absolute;
+  //   background-color: $background;
+  //   width: 10000px;
+  //   height: 520px;
+  //   z-index: -1;
+  //   border-radius: 32px 0px 0px 4px;
+  //   top: -16px;
+  //   left: -524px;
+  // }
 
   &__lamp {
     position: relative;

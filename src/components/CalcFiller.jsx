@@ -16,7 +16,7 @@ function CalcFiller() {
       name: "Синтепон",
       img: sintepon,
       description:
-        'Синтепон - легкий, объемный, упругий нетканый материал, в котором смесь полиэфирных волокон скрепляется клеевым (эмульсионным) или термическим способом. Преимущества синтепона заключаются в легкости, хороших теплозащитных свойствах и малом весе. Синтепон используется как утеплитель, фильтровальный материал.',
+        "Синтепон - легкий, объемный, упругий нетканый материал, в котором смесь полиэфирных волокон скрепляется клеевым (эмульсионным) или термическим способом. Преимущества синтепона заключаются в легкости, хороших теплозащитных свойствах и малом весе. Синтепон используется как утеплитель, фильтровальный материал.",
     },
     {
       name: "Синтепух",
@@ -60,9 +60,10 @@ function CalcFiller() {
 
   return (
     <div
-      className={classNames("calcfiller", {
-        displaynone: !cloth,
-      })}
+      className="calcfiller"
+      // className={classNames("calcfiller", {
+      //   displaynone: !cloth,
+      // })}
     >
       <div className="container">
         <h3 className="calcfiller__title">Выберите наполнитель:</h3>
@@ -105,7 +106,10 @@ function CalcFiller() {
               {fillerItem.map((item) => {
                 if (item.name === filler) {
                   return (
-                    <div key={item.name} className="calcfiller__description-text">
+                    <div
+                      key={item.name}
+                      className="calcfiller__description-text"
+                    >
                       {item.description}
                     </div>
                   );

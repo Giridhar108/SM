@@ -1,4 +1,5 @@
 import React from "react";
+import Pulse from "react-reveal/Pulse";
 import calcMainImg from "../assets/images/calcMainImg.png";
 
 function MainCalc() {
@@ -59,7 +60,9 @@ function MainCalc() {
                   />
                 </svg>
               </div>
-              <div className="main__logo-text">Soul mebel</div>
+              <Pulse>
+                <div className="main__logo-text">Soul mebel</div>
+              </Pulse>
             </div>
             <h1 className="maincalc__title">
               Благодаря калькулятору можно быстро подобрать то что вам нужно.

@@ -42,9 +42,10 @@ function CalcCloth() {
 
   return (
     <div
-      className={classNames("calccloth", {
-        displaynone: !style,
-      })}
+      className="calccloth"
+      // className={classNames("calccloth", {
+      //   displaynone: !style,
+      // })}
     >
       <div className="container">
         <h3 className="calccloth__title">Выберите ткань и цвет:</h3>

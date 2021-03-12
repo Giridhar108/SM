@@ -60,9 +60,10 @@ function CalcStyle() {
 
   return (
     <div
-      className={classNames("calcstyle", {
-        displaynone: !kind,
-      })}
+      className="calcstyle"
+      // className={classNames("calcstyle", {
+      //   displaynone: !kind,
+      // })}
     >
       <div className="container">
         <h3 className="calcstyle__title">Выберите стиль:</h3>

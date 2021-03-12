@@ -1,27 +1,48 @@
 import React from "react";
+import classNames from "classnames";
 import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from "react-redux";
 import { addItem, reduceItem, setOrderItems } from "../redux/action/calculator";
 
 function Calcyc() {
+  const { register, errors, handleSubmit } = useForm();
+  const dispatch = useDispatch();
   const { kind, style, cloth, color, filler, count } = useSelector(
     (state) => state.calculator
   );
+  const show = kind && style && cloth && filler && count;
 
-  const dispatch = useDispatch();
+  const [showText, setShowText] = React.useState(false);
 
-  const { register, errors, handleSubmit } = useForm();
-  const onSubmit = (data) => {
+
+  const onSubmit = (data, e) => {
+    e.target.reset();
     console.log(data);
   };
 
   const addOrder = () => {
-    const item = { kind, style, cloth, color, filler, count, number: localStorage.length + 1 };
-    // console.log(localStorage.getItem('number'))
+    setShowText(true);
+    const item = {
+      kind,
+      style,
+      cloth,
+      color,
+      filler,
+      count,
+      number: localStorage.length + 1,
+    };
     localStorage.setItem(`${localStorage.length + 1}`, JSON.stringify(item));
-    dispatch(setOrderItems({ kind, style, cloth, color, filler, count, number: localStorage.length }))
-    // localStorage.clear()
-    // console.log(JSON.parse(localStorage.getItem('1')))
+    dispatch(
+      setOrderItems({
+        kind,
+        style,
+        cloth,
+        color,
+        filler,
+        count,
+        number: localStorage.length,
+      })
+    );
   };
 
   const changeAddItem = () => {
@@ -31,8 +52,6 @@ function Calcyc() {
     dispatch(reduceItem());
   };
 
-  // const addItems = () => {
-  // }
   return (
     <div className="calcyc">
       <div className="container">
@@ -55,7 +74,7 @@ function Calcyc() {
             <div className="calcyc__title-inner">Наполнитель:</div>
             <div className="calcyc__choise">{filler}</div>
             <div className="calcyc__svg" title="Добавить мебель в заказ">
-              {filler && (
+              {show && (
                 <svg
                   onClick={addOrder}
                   width="32"
@@ -131,7 +150,7 @@ function Calcyc() {
           </div>
         </div>
 
-        <div className={filler ? "calcyc__order" : "displaynone"}>
+        <div className={show ? "calcyc__order" : "displaynone"}>
           <h2 className="modal-title">Оставьте свои контактные данные.</h2>
           <p className="modal-text">
             Наш менеджер позвонит вам и обсудит детали заказа.
@@ -166,11 +185,18 @@ function Calcyc() {
               placeholder="Ваш электронный адрес"
             />
             <button type="submit" className="calcyc__btn">
-              {" "}
-              Отправить{" "}
+              Отправить
             </button>
           </form>
         </div>
+        <h3
+          // className={showText ? "calcyc__text-status" : "displaynone"}
+          className={classNames("calcyc__text-status", {
+            displaynone: !showText || kind,
+          })}
+        >
+          Мебель добавлена в заказ!
+        </h3>
       </div>
     </div>
   );
