@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 import { Header, Footer } from "../components";
 import { useForm } from "react-hook-form";
 import {
-  addItem,
-  reduceItem,
-  setOrderCount,
+  addItemOrder,
+  reduceItemOrder,
   setOrderItems,
   delateOrderItems,
 } from "../redux/action/calculator";
@@ -15,19 +14,18 @@ function Order() {
   const { register, errors, handleSubmit } = useForm();
   const dispatch = useDispatch();
   const orderItems = useSelector((state) => state.calculator.orderItems);
-
   const getLengthLs = () => {
     return localStorage.length;
   };
-
+  console.log('render')
   const orederItems = () => {
-    const numbers = orderItems.map((item) => item.number);
+    console.log(orderItems)
+    const numbers = orderItems.map((item) => item && item.number);
     const result = [];
     for (let i = 1; i <= 20; i = i + 1) {
       if (localStorage.getItem(`${i}`)) {
         const item = JSON.parse(localStorage.getItem(`${i}`));
         result.push(item);
-        console.log(numbers, orderItems, !numbers.includes(item.number))
         if (!numbers.includes(item.number)) {
           dispatch(setOrderItems(item));
         }
@@ -42,11 +40,27 @@ function Order() {
     localStorage.clear();
   };
 
-  const deleteItem = (key) => {
-    localStorage.removeItem(key);
-    dispatch(delateOrderItems(key))
+  const deleteItem = (number) => {
+    localStorage.removeItem(number);
+    dispatch(delateOrderItems(number))
   };
 
+  const addItem = (number) => {
+    const item = JSON.parse(localStorage.getItem(number))
+    item.count += 1
+    localStorage.removeItem(number)
+    localStorage.setItem(number, JSON.stringify(item))
+    dispatch(addItemOrder(number))
+  }
+  const reduceItem = (number) => {
+    const item = JSON.parse(localStorage.getItem(number))
+    item.count = item.count > 1 ? item.count - 1: item.count
+    localStorage.removeItem(number)
+    localStorage.setItem(number, JSON.stringify(item))
+    dispatch(reduceItemOrder(number))
+  }
+
+  orederItems()
   return (
     <div className="order-inner">
       <Header />
@@ -56,6 +70,14 @@ function Order() {
             <h3>Ваш заказ</h3>
             {orederItems().map(
               ({ kind, style, cloth, color, filler, number, count }) => {
+                const handleAddItemOrder = () => {
+                  addItem(number)
+
+                }
+                const handleReduceItemOrder = () => {
+                  reduceItem(number)
+
+                }
                 const handleDeleteItem = () => {
                   deleteItem(number);
                 };
@@ -111,6 +133,7 @@ function Order() {
                       <p>Колличество:</p>
                       <div className="calcyc__item-count-plus">
                         <svg
+                          onClick={handleAddItemOrder}
                           width="24"
                           height="24"
                           viewBox="0 0 24 24"
@@ -134,6 +157,7 @@ function Order() {
                       <div className="calcyc__item-count-num">{count}</div>
                       <div className="calcyc__item-count-minus">
                         <svg
+                          onClick={handleReduceItemOrder}
                           width="24"
                           height="24"
                           viewBox="0 0 24 24"

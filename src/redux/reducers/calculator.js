@@ -38,6 +38,7 @@ const calculator = (state = initialState, action) => {
       };
     case "PLUS": {
       const result = state.count + action.payload;
+
       return {
         ...state,
         count: result,
@@ -52,9 +53,36 @@ const calculator = (state = initialState, action) => {
         };
       }
     }
+    case "PLUS_ORDER": {
+
+      const newItems = [...state.orderItems.map((item) => {
+
+        if (item && item.number === action.payload) {
+          // item.count = item.count + 1;
+          return item
+        }
+
+      })]
+      return {
+        ...state,
+        orderItems: newItems,
+      };
+    }
+    case "MINUS_ORDER": {
+      const newItems = [...state.orderItems.map((item) => {
+        if (item && item.number === action.payload) {
+          item.count = item.count > 1 ? item.count - 1: item.count;
+          return item
+        }
+      })]
+      return {
+        ...state,
+        orderItems: newItems,
+      };
+    }
     case "ORDER_ITEMS": {
-      const newItem = state.orderItems
-      newItem.push(action.payload)
+      const newItem = state.orderItems;
+      newItem.push(action.payload);
       return {
         ...state,
         kind: null,
@@ -67,9 +95,11 @@ const calculator = (state = initialState, action) => {
       };
     }
     case "DELETE_ORDER_ITEMS": {
-      const newItems = state.orderItems.filter(item => {
-        return item.number !== action.payload
-      })
+      const newItems = state.orderItems.filter((item) => {
+        if (item) {
+          return item.number !== action.payload;
+        }
+      });
 
       return {
         ...state,

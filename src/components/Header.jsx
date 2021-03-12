@@ -57,7 +57,7 @@ function Header() {
           </div>
           <Link className="menu-order" to="/order">
             <div className="menu-order__text">Заказ</div>
-            <div className="menu-order__num">{orderCount}</div>
+            <div className="menu-order__num">{localStorage.length}</div>
           </Link>
         </div>
       </div>

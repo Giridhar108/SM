@@ -38,6 +38,16 @@ export const reduceItem = () => ({
   payload: 1,
 });
 
+export const addItemOrder = (number) => ({
+  type: "PLUS_ORDER",
+  payload: number,
+});
+
+export const reduceItemOrder = (number) => ({
+  type: "MINUS_ORDER",
+  payload: number,
+});
+
 export const setOrderItems = (item) => ({
   type: "ORDER_ITEMS",
   payload: item,
