@@ -5,6 +5,7 @@ const initialState = {
   color: null,
   filler: null,
   count: 0,
+  deleteItems: 0,
   orderItems: [],
 };
 
@@ -58,11 +59,11 @@ const calculator = (state = initialState, action) => {
       const newItems = [...state.orderItems.map((item) => {
 
         if (item && item.number === action.payload) {
-          // item.count = item.count + 1;
+          item.count = item.count + 1;
           return item
         }
 
-      })]
+      }).filter(item => item)]
       return {
         ...state,
         orderItems: newItems,
@@ -74,7 +75,7 @@ const calculator = (state = initialState, action) => {
           item.count = item.count > 1 ? item.count - 1: item.count;
           return item
         }
-      })]
+      }).filter(item => item)]
       return {
         ...state,
         orderItems: newItems,
@@ -111,9 +112,10 @@ const calculator = (state = initialState, action) => {
           return item.number !== action.payload;
         }
       });
-
+      const countDelete = state.deleteItems + 1
       return {
         ...state,
+        deleteItems: countDelete,
         orderItems: newItems,
       };
     }

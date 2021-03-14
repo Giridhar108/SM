@@ -8,7 +8,7 @@ import { addItem, reduceItem, setOrderItems, resetCalc  } from "../redux/action/
 function Calcyc() {
   const { register, errors, handleSubmit } = useForm();
   const dispatch = useDispatch();
-  const { kind, style, cloth, color, filler, count } = useSelector(
+  const { kind, style, cloth, color, filler, count, deleteItems } = useSelector(
     (state) => state.calculator
   );
   const show = kind && style && cloth && filler && count;
@@ -62,9 +62,9 @@ function Calcyc() {
       color,
       filler,
       count,
-      number: localStorage.length + 1,
+      number: localStorage.length + 1 + deleteItems,
     };
-    localStorage.setItem(`${localStorage.length + 1}`, JSON.stringify(item));
+    localStorage.setItem(`${localStorage.length + 1 + deleteItems}`, JSON.stringify(item));
     dispatch(
       setOrderItems({
         kind,

@@ -14,6 +14,7 @@ function Order() {
   const { register, errors, handleSubmit } = useForm();
   const dispatch = useDispatch();
   const orderItems = useSelector((state) => state.calculator.orderItems);
+
   const getLengthLs = () => {
     return localStorage.length;
   };
@@ -60,7 +61,7 @@ function Order() {
     dispatch(reduceItemOrder(number))
   }
 
-  orederItems()
+  // orederItems()
   return (
     <div className="order-inner">
       <Header />
