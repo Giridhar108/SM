@@ -4,7 +4,6 @@ import { useState } from "react";
 import Pulse from "react-reveal/Pulse";
 import Fade from "react-reveal/Fade";
 import Roll from "react-reveal/Roll";
-import LightSpeed from "react-reveal/LightSpeed";
 import Zoom from 'react-reveal/Zoom';
 
 import lamp from "../assets/images/lamp.png";
@@ -85,25 +84,25 @@ function Main() {
               </Pulse>
             </div>
             <Route path="/" exact>
-              <LightSpeed left>
+              <Fade left>
                 <h1 className="main__title">
                   Индивидуальное изготовление и перетяжка мебели
                 </h1>
-              </LightSpeed>
+              </Fade>
             </Route>
             <Route path="/create" exact>
-              <LightSpeed left>
+              <Fade left>
                 <h1 className="main__title main__title-create">
                   Давайте вместе создадим мебель вашей мечты
                 </h1>
-              </LightSpeed>
+              </Fade>
             </Route>
             <Route path="/recreate" exact>
-              <LightSpeed left>
+              <Fade left>
                 <h1 className="main__title main__title-recreate">
                   Вернем первосданный вид вашей мебели
                 </h1>
-              </LightSpeed>
+              </Fade>
             </Route>
             <Zoom>
             <a className="main__btn" onClick={setModal}>

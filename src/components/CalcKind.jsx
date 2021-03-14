@@ -22,6 +22,7 @@ import CalcPouf from "../assets/images/kind/pouf.png";
 
 import { useDispatch, useSelector } from "react-redux";
 import { setKind } from "../redux/action/calculator";
+import Zoom from "react-reveal/Zoom";
 
 const furnitureItems = [
   {
@@ -88,12 +89,14 @@ function CalcKind() {
             {furnitureItems.map((item) => {
               if (item.title === kind) {
                 return (
-                  <img
-                    key={item.title}
-                    src={item.png}
-                    alt=""
-                    className="calckind__png-img"
-                  />
+                  <Zoom key={item.title}>
+                    <img
+
+                      src={item.png}
+                      alt=""
+                      className="calckind__png-img"
+                    />
+                  </Zoom>
                 );
               }
             })}

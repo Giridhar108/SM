@@ -53,6 +53,10 @@ export const setOrderItems = (item) => ({
   payload: item,
 });
 
+export const resetCalc = () => ({
+  type: "RESET_CALC",
+});
+
 export const delateOrderItems = (item) => ({
   type: "DELETE_ORDER_ITEMS",
   payload: item,

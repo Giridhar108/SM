@@ -1,8 +1,9 @@
 import React from "react";
+import emailjs from "emailjs-com";
 import classNames from "classnames";
 import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from "react-redux";
-import { addItem, reduceItem, setOrderItems } from "../redux/action/calculator";
+import { addItem, reduceItem, setOrderItems, resetCalc  } from "../redux/action/calculator";
 
 function Calcyc() {
   const { register, errors, handleSubmit } = useForm();
@@ -14,10 +15,42 @@ function Calcyc() {
 
   const [showText, setShowText] = React.useState(false);
 
+  const onSubmit = async (data, e) => {
+    const dataSent = {
+        data,
+        kind,
+        style,
+        cloth,
+        color,
+        filler,
+        count,
+    };
 
-  const onSubmit = (data, e) => {
+    // let response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify(dataSent)
+    // });
+
     e.target.reset();
-    console.log(data);
+    emailjs
+      .send(
+        "service_ti2ihya",
+        "template_98q7f81",
+        dataSent,
+        "user_4ZqDrYxLRPkGjqkED8yYq"
+      )
+      .then(
+        function (response) {
+          dispatch(resetCalc())
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        }
+    );
   };
 
   const addOrder = () => {
@@ -175,7 +208,7 @@ function Calcyc() {
               ref={register({ required: true, maxLength: 11, minLength: 8 })}
               placeholder="Ваш телефон"
             />
-            <input
+            {/* <input
               type="text"
               name="Email"
               ref={register({
@@ -183,7 +216,7 @@ function Calcyc() {
                 pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
               })}
               placeholder="Ваш электронный адрес"
-            />
+            /> */}
             <button type="submit" className="calcyc__btn">
               Отправить
             </button>

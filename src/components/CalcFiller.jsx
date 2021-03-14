@@ -9,6 +9,7 @@ import brezent from "../assets/images/brezent.jpg";
 
 import { useDispatch, useSelector } from "react-redux";
 import { setFiller } from "../redux/action/calculator";
+import Fade from "react-reveal/Fade";
 
 function CalcFiller() {
   const fillerItem = [
@@ -93,12 +94,14 @@ function CalcFiller() {
             {fillerItem.map((item) => {
               if (item.name === filler) {
                 return (
-                  <img
-                    key={item.name}
-                    src={item.img}
-                    alt=""
-                    className="calcfiller__description-img"
-                  />
+                  <Fade key={item.name} right>
+                    <img
+
+                      src={item.img}
+                      alt=""
+                      className="calcfiller__description-img"
+                    />
+                  </Fade>
                 );
               }
             })}
@@ -106,12 +109,14 @@ function CalcFiller() {
               {fillerItem.map((item) => {
                 if (item.name === filler) {
                   return (
-                    <div
-                      key={item.name}
-                      className="calcfiller__description-text"
-                    >
-                      {item.description}
-                    </div>
+                    <Fade key={item.name} right>
+                      <div
+
+                        className="calcfiller__description-text"
+                      >
+                        {item.description}
+                      </div>
+                    </Fade>
                   );
                 }
               })}

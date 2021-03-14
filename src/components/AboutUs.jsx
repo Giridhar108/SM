@@ -2,14 +2,22 @@ import kushetka from "../assets/images/kushetka.png";
 
 function AboutUs() {
   return (
-    <div className="aboutus" id='aboutus'>
+    <div className="aboutus" id="aboutus">
       <div className="container">
         <div className="aboutus__wrapper">
           <div className="aboutus__img-wrapper">
-          <img src={kushetka} alt="" width="600" height="400" className="aboutus__img" />
+            <img
+              src={kushetka}
+              alt=""
+              width="600"
+              height="400"
+              className="aboutus__img"
+            />
           </div>
+
           <div className="aboutus__description">
             <h3 className="aboutus__title">О нас:</h3>
+
             <p className="aboutus__subtitle">
               Мы влюбленны в мебель. Делаем все, что бы создать иммено то, что
               нужно вам, нашему клиенту.

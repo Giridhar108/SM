@@ -17,7 +17,7 @@ function Header() {
     <header className="header">
       <div className="container">
         <div className="header__wrapper">
-          <Fade left>
+          <Fade right>
             <nav className="menu" id="header">
               <ul className="menu__list">
                 <li className="menu__item">
@@ -47,8 +47,8 @@ function Header() {
                 </li>
               </ul>
             </nav>
-          </Fade>
-          <Fade top>
+
+
             <div className="pnone">
               <a className="phone__number" href="tel:+79962283009">
                 <span>8 996 228 3009</span>
@@ -57,8 +57,8 @@ function Header() {
                 Обратный звонок
               </div>
             </div>
-          </Fade>
-          <Fade right>
+
+
 
           <Link className="menu-order" to="/order">
             <div className="menu-order__text">Заказ</div>

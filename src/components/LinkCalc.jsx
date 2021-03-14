@@ -1,12 +1,14 @@
 import React from "react";
-import calcChair from "../assets/images/calcChair.png";
-import calcChairWhite from "../assets/images/calcChairWhite.png";
 
 import { Route } from "react-router-dom";
+import Zoom from "react-reveal/Zoom";
+import calcChair from "../assets/images/calcChair.png";
+import calcChairWhite from "../assets/images/calcChairWhite.png";
 
 function LinkCalc() {
   return (
     <div className="linkcalc">
+      <Zoom>
       <div className="container">
         <div className="linkcalc__wrapper">
           <div className="linkcalc__left">
@@ -33,6 +35,7 @@ function LinkCalc() {
           </div>
         </div>
       </div>
+            </Zoom>
     </div>
   );
 }

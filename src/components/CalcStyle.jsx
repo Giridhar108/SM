@@ -9,6 +9,7 @@ import etnika from "../assets/images/etnika.png";
 
 import { useDispatch, useSelector } from "react-redux";
 import { setStyle } from "../redux/action/calculator";
+import Fade from "react-reveal/Fade";
 
 function CalcStyle() {
   const styleItem = [
@@ -91,26 +92,25 @@ function CalcStyle() {
             {styleItem.map((item) => {
               if (item.name === style) {
                 return (
-                  <img
-                    key={item.name}
-                    src={item.img}
-                    alt=""
-                    className="calcstyle__description-img"
-                  />
+                  <Fade key={item.name} right>
+                    <img
+                      src={item.img}
+                      alt=""
+                      className="calcstyle__description-img"
+                    />
+                  </Fade>
                 );
               }
             })}
-
             <div className="calcstyle__description-content">
               {styleItem.map((item) => {
                 if (item.name === style) {
                   return (
-                    <div
-                      key={item.name}
-                      className="calcstyle__description-text"
-                    >
-                      {item.description}
-                    </div>
+                    <Fade key={item.name} right>
+                      <div className="calcstyle__description-text">
+                        {item.description}
+                      </div>
+                    </Fade>
                   );
                 }
               })}

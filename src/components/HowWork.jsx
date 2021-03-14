@@ -1,12 +1,13 @@
+import HowWorkItem from "./HowWorkItem";
+import { Route } from "react-router-dom";
+import Zoom from "react-reveal/Zoom";
+
 import one from "../assets/svg/1c.svg";
 import two from "../assets/svg/2c.svg";
 import three from "../assets/svg/3c.svg";
 import four from "../assets/svg/4c.svg";
 import five from "../assets/svg/5c.svg";
 import six from "../assets/svg/6c.svg";
-import HowWorkItem from "./HowWorkItem";
-import { Route } from "react-router-dom";
-
 function HowWork() {
   const howWorkDescription = [
     {
@@ -44,8 +45,7 @@ function HowWork() {
   const howWorkDescriptionRecreate = [
     {
       title: "Принимаем заказ",
-      text:
-        "Вы присылаете нам фото и размеры. Выбираем ткань.",
+      text: "Вы присылаете нам фото и размеры. Выбираем ткань.",
       svg: one,
     },
     {
@@ -62,14 +62,12 @@ function HowWork() {
     },
     {
       title: "Работы по восстановлению",
-      text:
-        "Отлекаливание, раскрой, пошив, обивка.",
+      text: "Отлекаливание, раскрой, пошив, обивка.",
       svg: four,
     },
     {
       title: "Приёмка ОТК",
-      text:
-        "Отправляем вам фото. Окончательный рачет.",
+      text: "Отправляем вам фото. Окончательный рачет.",
       svg: five,
     },
     {
@@ -84,19 +82,23 @@ function HowWork() {
     <div className="howwork" id="howwork">
       <div className="container">
         <div className="howwork__wrapper">
-          <h3 className="howwork__title">Как мы работаем:</h3>
-          <div className="howwork__items">
-            <Route path="/" exact>
-              {howWorkDescription.map((item, index) => (
-                <HowWorkItem key={index} {...item} />
-              ))}
-            </Route>
-            <Route path="/recreate" exact>
-              {howWorkDescriptionRecreate.map((item, index) => (
-                <HowWorkItem key={index} {...item} />
-              ))}
-            </Route>
-          </div>
+          <Zoom>
+            <h3 className="howwork__title">Как мы работаем:</h3>
+          </Zoom>
+            <div className="howwork__items">
+              <Route path="/" exact>
+
+                {howWorkDescription.map((item, index) => (
+                  <HowWorkItem key={index} {...item} />
+                ))}
+
+              </Route>
+              <Route path="/recreate" exact>
+                {howWorkDescriptionRecreate.map((item, index) => (
+                  <HowWorkItem key={index} {...item} />
+                ))}
+              </Route>
+            </div>
         </div>
       </div>
     </div>

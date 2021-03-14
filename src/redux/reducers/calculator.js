@@ -80,6 +80,17 @@ const calculator = (state = initialState, action) => {
         orderItems: newItems,
       };
     }
+    case "RESET_CALC": {
+      return {
+        ...state,
+        kind: null,
+        style: null,
+        cloth: null,
+        color: null,
+        filler: null,
+        count: 0,
+      };
+    }
     case "ORDER_ITEMS": {
       const newItem = state.orderItems;
       newItem.push(action.payload);
