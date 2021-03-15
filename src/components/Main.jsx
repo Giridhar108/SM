@@ -13,13 +13,13 @@ import bedMainThree from "../assets/images/bedMainThree.png";
 
 function Main() {
   const [modalActive, setModalActive] = useState(false);
-
   const setModal = () => setModalActive(true);
   if (modalActive) {
     document.querySelector("body").classList.add("hidden");
   } else {
     document.querySelector("body").classList.remove("hidden");
   }
+  const local = document.getElementsByTagName('h1')[0]
   return (
     <div className="main">
       <div className="container">
@@ -339,6 +339,7 @@ function Main() {
           </div>
 
           <Route path="/" exact>
+
             <div className="main__right">
               <Fade top>
                 <img className="main__lamp" src={lamp} alt="" />
@@ -349,6 +350,7 @@ function Main() {
             </div>
           </Route>
           <Route path="/create" exact>
+
             <div className="main__right-create">
               <Fade right>
                 <img className="main__couchMainTwo" src={couchMainTwo} alt="" />
@@ -356,6 +358,7 @@ function Main() {
             </div>
           </Route>
           <Route path="/recreate" exact>
+
             <div className="main__right-recreate">
               <Fade right>
                 <img className="main__bedMainThree" src={bedMainThree} alt="" />
@@ -368,6 +371,7 @@ function Main() {
         className="modal"
         active={modalActive}
         setActive={setModalActive}
+        location={local}
       />
     </div>
   );

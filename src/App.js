@@ -4,6 +4,8 @@ import Create from "./pages/Create";
 import Recreate from "./pages/Recreate";
 import Calculator from "./pages/Calculator";
 import Order from "./pages/Order";
+import Policy from "./pages/Policy";
+
 
 import { Route } from "react-router-dom";
 
@@ -15,6 +17,7 @@ function App() {
       <Route path="/recreate" component={Recreate} exact />
       <Route path="/calculator" component={Calculator} exact />
       <Route path="/order" component={Order} exact />
+      <Route path="/Policy" component={Policy} exact />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import emailjs from "emailjs-com";
 import { Link } from "react-router-dom";
 import { Header, Footer } from "../components";
 import { useForm } from "react-hook-form";
@@ -18,9 +19,8 @@ function Order() {
   const getLengthLs = () => {
     return localStorage.length;
   };
-  console.log('render')
+
   const orederItems = () => {
-    console.log(orderItems)
     const numbers = orderItems.map((item) => item && item.number);
     const result = [];
     for (let i = 1; i <= 20; i = i + 1) {
@@ -36,32 +36,55 @@ function Order() {
   };
 
   const onSubmit = (data, e) => {
-    e.target.reset();
-    console.log(data, orederItems());
-    localStorage.clear();
+    const items = orederItems().reduce((acc, item, i) => {
+      acc[i] = item;
+      return acc;
+    }, {});
+
+    const dataSent = {
+      data,
+      items,
+    };
+
+    emailjs
+      .send(
+        "service_ti2ihya",
+        "template_dxaxblw",
+        dataSent,
+        "user_4ZqDrYxLRPkGjqkED8yYq"
+      )
+      .then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+          e.target.reset();
+          localStorage.clear();
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        }
+      );
   };
 
   const deleteItem = (number) => {
     localStorage.removeItem(number);
-    dispatch(delateOrderItems(number))
+    dispatch(delateOrderItems(number));
   };
 
   const addItem = (number) => {
-    const item = JSON.parse(localStorage.getItem(number))
-    item.count += 1
-    localStorage.removeItem(number)
-    localStorage.setItem(number, JSON.stringify(item))
-    dispatch(addItemOrder(number))
-  }
+    const item = JSON.parse(localStorage.getItem(number));
+    item.count += 1;
+    localStorage.removeItem(number);
+    localStorage.setItem(number, JSON.stringify(item));
+    dispatch(addItemOrder(number));
+  };
   const reduceItem = (number) => {
-    const item = JSON.parse(localStorage.getItem(number))
-    item.count = item.count > 1 ? item.count - 1: item.count
-    localStorage.removeItem(number)
-    localStorage.setItem(number, JSON.stringify(item))
-    dispatch(reduceItemOrder(number))
-  }
+    const item = JSON.parse(localStorage.getItem(number));
+    item.count = item.count > 1 ? item.count - 1 : item.count;
+    localStorage.removeItem(number);
+    localStorage.setItem(number, JSON.stringify(item));
+    dispatch(reduceItemOrder(number));
+  };
 
-  // orederItems()
   return (
     <div className="order-inner">
       <Header />
@@ -72,13 +95,11 @@ function Order() {
             {orederItems().map(
               ({ kind, style, cloth, color, filler, number, count }) => {
                 const handleAddItemOrder = () => {
-                  addItem(number)
-
-                }
+                  addItem(number);
+                };
                 const handleReduceItemOrder = () => {
-                  reduceItem(number)
-
-                }
+                  reduceItem(number);
+                };
                 const handleDeleteItem = () => {
                   deleteItem(number);
                 };
@@ -215,18 +236,20 @@ function Order() {
                   })}
                   placeholder="Ваш телефон"
                 />
-                <input
-                  type="text"
-                  name="Email"
-                  ref={register({
-                    required: false,
-                    pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                  })}
-                  placeholder="Ваш электронный адрес"
-                />
+                <div className="modal__policy">
+                  <input
+                    className="modal__policy-input"
+                    name="policy"
+                    type="checkbox"
+                    value="No"
+                    ref={register({ required: true })}
+                  />
+                  <label>
+                    С <a className="modal__policy-link" href="/Policy">политикой конфиденциальности</a> ознакомлен
+                  </label>
+                </div>
                 <button type="submit" className="calcyc__btn">
-                  {" "}
-                  Отправить{" "}
+                  Отправить
                 </button>
               </form>
             </div>

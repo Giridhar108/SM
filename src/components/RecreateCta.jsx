@@ -13,6 +13,7 @@ function RecreateCta() {
   } else {
     document.querySelector("body").classList.remove("hidden");
   }
+  const local = document.getElementsByTagName('h1')[0]
 
   return (
     <div className="linkcalc">
@@ -40,6 +41,7 @@ function RecreateCta() {
         className="modal"
         active={modalActive}
         setActive={setModalActive}
+        location={local}
       />
     </div>
   );

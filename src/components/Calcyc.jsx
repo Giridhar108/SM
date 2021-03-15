@@ -3,7 +3,12 @@ import emailjs from "emailjs-com";
 import classNames from "classnames";
 import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from "react-redux";
-import { addItem, reduceItem, setOrderItems, resetCalc  } from "../redux/action/calculator";
+import {
+  addItem,
+  reduceItem,
+  setOrderItems,
+  resetCalc,
+} from "../redux/action/calculator";
 
 function Calcyc() {
   const { register, errors, handleSubmit } = useForm();
@@ -14,16 +19,17 @@ function Calcyc() {
   const show = kind && style && cloth && filler && count;
 
   const [showText, setShowText] = React.useState(false);
+  const [showSendEmail, setShowSendEmail] = React.useState(false);
 
   const onSubmit = async (data, e) => {
     const dataSent = {
-        data,
-        kind,
-        style,
-        cloth,
-        color,
-        filler,
-        count,
+      data,
+      kind,
+      style,
+      cloth,
+      color,
+      filler,
+      count,
     };
 
     // let response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
@@ -44,13 +50,15 @@ function Calcyc() {
       )
       .then(
         function (response) {
-          dispatch(resetCalc())
           console.log("SUCCESS!", response.status, response.text);
+          dispatch(resetCalc());
+          setShowSendEmail(true);
+          setShowText(true);
         },
         function (error) {
           console.log("FAILED...", error);
         }
-    );
+      );
   };
 
   const addOrder = () => {
@@ -64,7 +72,10 @@ function Calcyc() {
       count,
       number: localStorage.length + 1 + deleteItems,
     };
-    localStorage.setItem(`${localStorage.length + 1 + deleteItems}`, JSON.stringify(item));
+    localStorage.setItem(
+      `${localStorage.length + 1 + deleteItems}`,
+      JSON.stringify(item)
+    );
     dispatch(
       setOrderItems({
         kind,
@@ -208,6 +219,16 @@ function Calcyc() {
               ref={register({ required: true, maxLength: 11, minLength: 8 })}
               placeholder="Ваш телефон"
             />
+            <div className="modal__policy">
+            <input
+              className="modal__policy-input"
+              name="policy"
+              type="checkbox"
+              value="No"
+              ref={register({ required: true })}
+            />
+            <label>С <a className="modal__policy-link" href="/Policy">политикой конфиденциальности</a>  ознакомлен</label>
+          </div>
             {/* <input
               type="text"
               name="Email"
@@ -228,7 +249,9 @@ function Calcyc() {
             displaynone: !showText || kind,
           })}
         >
-          Мебель добавлена в заказ!
+          {showSendEmail
+            ? "Ваша заявка принята, ожидайте звонка нашего менеджера."
+            : "Мебель добавлена в заказ!"}
         </h3>
       </div>
     </div>

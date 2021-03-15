@@ -50,7 +50,7 @@ modal-text {
 }
 
 .modal-form input {
-  margin-top: 12px;
+  margin-bottom: 12px;
   padding: 0 10px;
   width: 40%;
   height: 30px;
@@ -96,5 +96,23 @@ modal-text {
     &:hover {
       box-shadow: 3px 4px 3px #cbcbcb;
     }
+  }
+  &__policy {
+    margin-bottom: 12px;
+    display: flex;
+    label {
+      margin-left: 12px;
+      text-align: initial;
+      height: auto;
+      font-size: 13px;
+    }
+  }
+  &__policy-input {
+    width: auto !important;
+    margin: 0 !important;
+    height: 16px !important;
+  }
+  &__policy-link {
+    border-bottom: solid 1px #dd2020;
   }
 }

@@ -72,6 +72,7 @@ function Header() {
         className="modal"
         active={modalActive}
         setActive={setModalActive}
+        location={'обратный звонок'}
       />
     </header>
   );

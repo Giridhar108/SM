@@ -14,6 +14,8 @@ function Indorder() {
   } else {
     document.querySelector("body").classList.remove("hidden");
   }
+  const local = document.getElementsByTagName('h1')[0]
+
   return (
     <div className="indorder">
       <div className="container">
@@ -78,6 +80,7 @@ function Indorder() {
         className="modal"
         active={modalActive}
         setActive={setModalActive}
+        location={local}
       />
     </div>
   );

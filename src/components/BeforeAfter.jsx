@@ -13,6 +13,7 @@ function BeforeAfter() {
   } else {
     document.querySelector("body").classList.remove("hidden");
   }
+  const local = document.getElementsByTagName('h1')[0]
 
   return (
     <div className="beforeafter" id="ba">
@@ -50,6 +51,7 @@ function BeforeAfter() {
         className="modal"
         active={modalActive}
         setActive={setModalActive}
+        location={local}
       />
     </div>
   );
