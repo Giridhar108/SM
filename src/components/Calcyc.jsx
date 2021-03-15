@@ -17,7 +17,6 @@ function Calcyc() {
     (state) => state.calculator
   );
   const show = kind && style && cloth && filler && count;
-
   const [showText, setShowText] = React.useState(false);
   const [showSendEmail, setShowSendEmail] = React.useState(false);
 
@@ -70,12 +69,13 @@ function Calcyc() {
       color,
       filler,
       count,
-      number: localStorage.length + 1 + deleteItems,
+      number: localStorage.length + 1,
     };
-    localStorage.setItem(
-      `${localStorage.length + 1 + deleteItems}`,
-      JSON.stringify(item)
-    );
+      localStorage.setItem(
+        `${localStorage.length + 1}`,
+        JSON.stringify(item)
+        );
+
     dispatch(
       setOrderItems({
         kind,
@@ -243,16 +243,15 @@ function Calcyc() {
             </button>
           </form>
         </div>
-        <h3
-          // className={showText ? "calcyc__text-status" : "displaynone"}
+        <div
           className={classNames("calcyc__text-status", {
             displaynone: !showText || kind,
           })}
         >
           {showSendEmail
             ? "Ваша заявка принята, ожидайте звонка нашего менеджера."
-            : "Мебель добавлена в заказ!"}
-        </h3>
+            : <p>Мебель добавлена в <a href="/order">заказ</a>!</p>}
+        </div>
       </div>
     </div>
   );

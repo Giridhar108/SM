@@ -1,7 +1,12 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import Modal from "./Modal";
 import { useState } from "react";
 import Fade from "react-reveal/Fade";
+import {
+  setCountItems
+} from "../redux/action/calculator";
+import { useSelector, useDispatch } from "react-redux";
 
 function Header() {
   const [modalActive, setModalActive] = useState(false);
@@ -13,6 +18,24 @@ function Header() {
     document.querySelector("body").classList.remove("hidden");
   }
 
+
+  const dispatch = useDispatch();
+  const countItems = useSelector(state => state.calculator.countItems)
+
+  const orederItems = () => {
+    const result = [];
+    for (let i = 1; i <= 50; i = i + 1) {
+      if (localStorage.getItem(`${i}`)) {
+        const item = JSON.parse(localStorage.getItem(`${i}`));
+        if (item) {
+          result.push(item);
+        }
+      }
+    }
+    dispatch(setCountItems(result.filter(item => item).length))
+    return result;
+  };
+orederItems()
   return (
     <header className="header">
       <div className="container">
@@ -62,7 +85,7 @@ function Header() {
 
           <Link className="menu-order" to="/order">
             <div className="menu-order__text">Заказ</div>
-            <div className="menu-order__num">{localStorage.length}</div>
+            <div className="menu-order__num">{countItems}</div>
           </Link>
 
         </Fade>

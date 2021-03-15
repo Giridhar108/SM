@@ -16,7 +16,7 @@ import {
 function Calculator() {
   return (
     <div>
-      <Header/>
+      {/* <Header/> */}
       <MainCalc/>
       <CalcKind />
       <CalcStyle />

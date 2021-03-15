@@ -11,7 +11,7 @@ import {
 function Create() {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <Main />
       <IndOrder/>
       <Furniture/>

@@ -3,7 +3,7 @@ import { Header, Footer } from "../components";
 function Policy() {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <div className="policy">
         <div className="container">
           <div className="policy__wrapper">

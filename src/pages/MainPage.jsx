@@ -15,7 +15,7 @@ import {
 function MainPages() {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <Main />
       <Bolits />
       <AboutUs />

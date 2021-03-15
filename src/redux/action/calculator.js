@@ -62,3 +62,8 @@ export const delateOrderItems = (item) => ({
   payload: item,
 });
 
+export const setCountItems = (item) => ({
+  type: "SET_COUNT_ITEMS",
+  payload: item,
+});
+

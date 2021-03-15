@@ -8,6 +8,7 @@ import {
   reduceItemOrder,
   setOrderItems,
   delateOrderItems,
+  setCountItems,
 } from "../redux/action/calculator";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -15,23 +16,22 @@ function Order() {
   const { register, errors, handleSubmit } = useForm();
   const dispatch = useDispatch();
   const orderItems = useSelector((state) => state.calculator.orderItems);
-
-  const getLengthLs = () => {
-    return localStorage.length;
-  };
+  const countItems = useSelector((state) => state.calculator.countItems);
+  console.log('sadgf')
 
   const orederItems = () => {
     const numbers = orderItems.map((item) => item && item.number);
     const result = [];
-    for (let i = 1; i <= 20; i = i + 1) {
+    for (let i = 1; i <= 50; i = i + 1) {
       if (localStorage.getItem(`${i}`)) {
         const item = JSON.parse(localStorage.getItem(`${i}`));
         result.push(item);
-        if (!numbers.includes(item.number)) {
+        if (item && !numbers.includes(item.number)) {
           dispatch(setOrderItems(item));
         }
       }
     }
+    dispatch(setCountItems(result.filter(item => item).length))
     return result;
   };
 
@@ -58,6 +58,7 @@ function Order() {
           console.log("SUCCESS!", response.status, response.text);
           e.target.reset();
           localStorage.clear();
+          dispatch(setCountItems(orederItems().filter(item => item).length))
         },
         function (error) {
           console.log("FAILED...", error);
@@ -66,7 +67,8 @@ function Order() {
   };
 
   const deleteItem = (number) => {
-    localStorage.removeItem(number);
+    // localStorage.removeItem(number);
+    localStorage.setItem(number, null)
     dispatch(delateOrderItems(number));
   };
 
@@ -87,12 +89,12 @@ function Order() {
 
   return (
     <div className="order-inner">
-      <Header />
-      {getLengthLs() ? (
+      {/* <Header /> */}
+      {orederItems().filter(item => item).length ? (
         <div className="order">
           <div className="container">
             <h3>Ваш заказ</h3>
-            {orederItems().map(
+            {orederItems().filter(item => item).map(
               ({ kind, style, cloth, color, filler, number, count }) => {
                 const handleAddItemOrder = () => {
                   addItem(number);
@@ -205,6 +207,7 @@ function Order() {
                 );
               }
             )}
+
             <div className="calcyc__order">
               <h2 className="modal-title">Оставьте свои контактные данные.</h2>
               <p className="modal-text">
@@ -253,6 +256,7 @@ function Order() {
                 </button>
               </form>
             </div>
+
           </div>
         </div>
       ) : (

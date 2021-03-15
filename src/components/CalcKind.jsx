@@ -83,6 +83,7 @@ function CalcKind() {
   return (
     <div className="calckind">
       <div className="container">
+        
         <h3 className="calckind__title">Выберите вид мебели:</h3>
         <div className="calckind__wrapper">
           <div className="calckind__png">

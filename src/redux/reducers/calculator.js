@@ -6,6 +6,7 @@ const initialState = {
   filler: null,
   count: 0,
   deleteItems: 0,
+  countItems: 0,
   orderItems: [],
 };
 
@@ -37,6 +38,11 @@ const calculator = (state = initialState, action) => {
         ...state,
         filler: action.payload,
       };
+    case "SET_COUNT_ITEMS":
+      return {
+        ...state,
+        countItems: action.payload,
+      };
     case "PLUS": {
       const result = state.count + action.payload;
 
@@ -55,27 +61,32 @@ const calculator = (state = initialState, action) => {
       }
     }
     case "PLUS_ORDER": {
-
-      const newItems = [...state.orderItems.map((item) => {
-
-        if (item && item.number === action.payload) {
-          item.count = item.count + 1;
-          return item
-        }
-
-      }).filter(item => item)]
+      const newItems = [
+        ...state.orderItems
+          .map((item) => {
+            if (item && item.number === action.payload) {
+              item.count = item.count + 1;
+              return item;
+            }
+          })
+          .filter((item) => item),
+      ];
       return {
         ...state,
         orderItems: newItems,
       };
     }
     case "MINUS_ORDER": {
-      const newItems = [...state.orderItems.map((item) => {
-        if (item && item.number === action.payload) {
-          item.count = item.count > 1 ? item.count - 1: item.count;
-          return item
-        }
-      }).filter(item => item)]
+      const newItems = [
+        ...state.orderItems
+          .map((item) => {
+            if (item && item.number === action.payload) {
+              item.count = item.count > 1 ? item.count - 1 : item.count;
+              return item;
+            }
+          })
+          .filter((item) => item),
+      ];
       return {
         ...state,
         orderItems: newItems,
@@ -112,7 +123,7 @@ const calculator = (state = initialState, action) => {
           return item.number !== action.payload;
         }
       });
-      const countDelete = state.deleteItems + 1
+      const countDelete = state.deleteItems + 1;
       return {
         ...state,
         deleteItems: countDelete,

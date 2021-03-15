@@ -12,7 +12,7 @@ import {
 function Recreate() {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <Main />
       <BeforeAfter/>
       <HowWork />
