@@ -89,7 +89,6 @@ function Order() {
 
   return (
     <div className="order-inner">
-      {/* <Header /> */}
       {orederItems().filter(item => item).length ? (
         <div className="order">
           <div className="container">

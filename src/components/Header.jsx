@@ -1,16 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import classNames from "classnames";
 import Modal from "./Modal";
 import { useState } from "react";
 import Fade from "react-reveal/Fade";
-import {
-  setCountItems
-} from "../redux/action/calculator";
+import { setCountItems } from "../redux/action/calculator";
 import { useSelector, useDispatch } from "react-redux";
 
 function Header() {
   const [modalActive, setModalActive] = useState(false);
-
   const setModal = () => setModalActive(true);
   if (modalActive) {
     document.querySelector("body").classList.add("hidden");
@@ -18,9 +16,8 @@ function Header() {
     document.querySelector("body").classList.remove("hidden");
   }
 
-
   const dispatch = useDispatch();
-  const countItems = useSelector(state => state.calculator.countItems)
+  const countItems = useSelector((state) => state.calculator.countItems);
 
   const orederItems = () => {
     const result = [];
@@ -32,10 +29,10 @@ function Header() {
         }
       }
     }
-    dispatch(setCountItems(result.filter(item => item).length))
+    dispatch(setCountItems(result.filter((item) => item).length));
     return result;
   };
-orederItems()
+  orederItems();
   return (
     <header className="header">
       <div className="container">
@@ -71,7 +68,6 @@ orederItems()
               </ul>
             </nav>
 
-
             <div className="pnone">
               <a className="phone__number" href="tel:+79962283009">
                 <span>8 996 228 3009</span>
@@ -81,21 +77,36 @@ orederItems()
               </div>
             </div>
 
-
-
-          <Link className="menu-order" to="/order">
-            <div className="menu-order__text">Заказ</div>
-            <div className="menu-order__num">{countItems}</div>
-          </Link>
-
-        </Fade>
+            <Link className="menu-order" to="/order">
+              <div
+                className={classNames({
+                  "menu-order__text":
+                    navigator.userAgent.indexOf("Firefox") == -1,
+                  "menu-order__text-moz":
+                    navigator.userAgent.indexOf("Firefox") != -1,
+                })}
+              >
+                Заказ
+              </div>
+              <div
+                className={classNames({
+                  "menu-order__num":
+                    navigator.userAgent.indexOf("Firefox") == -1,
+                  "menu-order__num-moz":
+                    navigator.userAgent.indexOf("Firefox") != -1,
+                })}
+              >
+                {countItems}
+              </div>
+            </Link>
+          </Fade>
         </div>
       </div>
       <Modal
         className="modal"
         active={modalActive}
         setActive={setModalActive}
-        location={'обратный звонок'}
+        location={"обратный звонок"}
       />
     </header>
   );

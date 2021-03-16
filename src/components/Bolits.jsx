@@ -1,5 +1,4 @@
 import Bolit from "./Bolit";
-import ScrollAnimation from "react-animate-on-scroll";
 import Slide from "react-reveal/Slide";
 
 import bolLamp from "../assets/svg/bolLamp.svg";
