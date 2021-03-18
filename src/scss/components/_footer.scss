@@ -4,6 +4,7 @@
   &__wrapper {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
   &__logo,
   &__kinds,
@@ -20,15 +21,23 @@
     font-size: 18px;
     line-height: 16px;
   }
-  &__logo {
+
+  &__logo, &__logo-end {
     min-width: 228px;
   }
-  &__logo-svg {
+  &__logo-end {
+    display: none;
+    margin-top: 8px;
+    width: 228px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  &__logo-svg, &__logo-end-svg {
     display: flex;
     align-items: center;
   }
 
-  &__logo-text {
+  &__logo-text, &__logo-end-text {
     margin-left: 8px;
     font-family: Port Lligat Sans;
     font-style: normal;
@@ -37,7 +46,7 @@
     line-height: 39px;
     color: rgba(41, 22, 65, 1);
   }
-  &__logo-subtitle {
+  &__logo-subtitle, &__logo-end-subtitle {
     max-width: 215px;
     margin-top: 12px;
     font-style: normal;
@@ -45,6 +54,7 @@
     font-size: 14px;
     line-height: 16px;
   }
+
   &__kinds {
     width: 200px;
   }
@@ -70,6 +80,7 @@
     margin-right: 8px;
   }
   &__contacts-policy {
+    min-width: 243px;
     border-bottom: 1px solid $black;
   }
 }

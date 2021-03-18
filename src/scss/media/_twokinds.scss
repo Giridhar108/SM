@@ -1,0 +1,71 @@
+// .twokinds {
+//   margin-top: 92px;
+//   &__wrapper {
+//     display: flex;
+//     justify-content: space-between;
+//   }
+//   &__content {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//   }
+//   &__create,
+//   &__recreate {
+//     display: flex;
+//     justify-content: space-between;
+//     width: 49%;
+//     margin: 8px;
+//     background-color: $background;
+//     padding: 24px;
+//     box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.15);
+//     border-radius: 4px;
+//     transition: .2s linear;
+//   }
+
+//   &__create {
+//     text-align: right;
+//   }
+//   &__recreate {
+//     flex-direction: row-reverse;
+//   }
+//   &__item:hover {
+//     box-shadow: 0 0 0 2px white, 0 0 0 4px $color-yellow;
+//   }
+
+//   &__title {
+//     font-style: normal;
+//     font-weight: 500;
+//     font-size: 24px;
+//     line-height: 28px;
+//   }
+//   &__subtitle {
+//     display: inline-block;
+//     margin-top: 8px;
+//     width: 257px;
+//     font-style: normal;
+//     font-weight: normal;
+//     font-size: 15px;
+//     line-height: 18px;
+//     opacity: 0.9;
+//   }
+
+//   &__more {
+//     width: 80px;
+//     position: relative;
+//     font-style: normal;
+//     font-weight: normal;
+//     font-size: 15px;
+//     line-height: 18px;
+//     border-bottom: 1px solid $black;
+//     cursor: pointer;
+//     opacity: 0.7;
+//     transition: .3s linear;
+//     &:hover {
+//       opacity: 1;
+//     }
+//   }
+
+//   &__create-more {
+//     align-self: flex-end;
+//   }
+// }

@@ -1,0 +1,115 @@
+// .modal {
+//   height: 100vh;
+//   width: 100vw;
+//   background-color: rgba(0, 0, 0, 0.4);
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   pointer-events: none;
+//   opacity: 0;
+//   transition: 0.5s;
+//   overflow: hidden;
+//   z-index: 2;
+// }
+
+// .modal.active {
+//   opacity: 1;
+//   pointer-events: all;
+// }
+
+// .modal--content {
+//   text-align: center;
+//   width: 25vw;
+//   min-width: 320px;
+//   padding: 32px;
+//   border-radius: 4px;
+//   background-color: #fff;
+//   transform: scale(0.5);
+//   transition: 0.4s all;
+// }
+
+// .modal--content.active {
+//   transform: scale(1);
+// }
+
+// .hidden {
+//   overflow: hidden;
+// }
+
+// modal-text {
+//   margin-top: 8px;
+// }
+
+// .modal-form {
+//   display: flex;
+//   flex-direction: column;
+//   margin-top: 16px;
+// }
+
+// .modal-form input {
+//   margin-bottom: 12px;
+//   padding: 0 10px;
+//   width: 40%;
+//   height: 30px;
+//   border: 1px solid #dddddd;
+//   border-radius: 4px;
+//   font-size: 20px;
+//   display: block;
+// }
+
+// .modal {
+//   &-text {
+//     margin-top: 8px;
+//   }
+
+//   &__form input {
+//     width: 100%;
+//     margin: 12px auto;
+//     padding: 0 10px;
+//     height: 30px;
+//     border: 1px solid #dddddd;
+//     border-radius: 4px;
+//     font-size: 20px;
+//     display: block;
+//   }
+
+//   &__btn {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: 176px;
+//     height: 40px;
+//     margin: 0 auto;
+//     font-size: 16px;
+//     background-color: $color-yellow;
+//     border-radius: 4px;
+//     border: none;
+//     box-shadow: 0 1px 3px #cbcbcb;
+//     transition: all 0.3s;
+//     cursor: pointer;
+//     &:hover {
+//       box-shadow: 3px 4px 3px #cbcbcb;
+//     }
+//   }
+//   &__policy {
+//     margin-bottom: 12px;
+//     display: flex;
+//     label {
+//       margin-left: 12px;
+//       text-align: initial;
+//       height: auto;
+//       font-size: 13px;
+//     }
+//   }
+//   &__policy-input {
+//     width: auto !important;
+//     margin: 0 !important;
+//     height: 16px !important;
+//   }
+//   &__policy-link {
+//     border-bottom: solid 1px #dd2020;
+//   }
+// }

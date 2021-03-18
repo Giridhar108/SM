@@ -1,0 +1,19 @@
+@media (max-width: 930px) {
+  .footer {
+    padding-bottom: 32px;
+    &__wrapper {
+      flex-direction: row-reverse;
+    }
+    &__logo {
+      display: none;
+    }
+    &__logo-end {
+      display: block;
+    }
+  }
+}
+@media (max-width: 670px) {
+  .footer {
+
+  }
+}

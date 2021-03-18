@@ -1,0 +1,62 @@
+// .calccloth {
+//   margin-top: 64px;
+//   &__title {
+//     text-align: end;
+//     padding-right: 32px;
+//     font-style: normal;
+//     font-weight: 500;
+//     font-size: 24px;
+//     line-height: 28px;
+//   }
+//   &__wrapper {
+//     margin-top: 32px;
+//     display: flex;
+//   }
+//   &__image {
+//     position: relative;
+//     align-self: center;
+//   }
+//   &__image-img {
+//     border-radius: 4px;
+//   }
+//   &__items {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: center;
+//   }
+//   &__item {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     background-color: $background;
+//     width: 171px;
+//     height: 50px;
+//     margin: 8px;
+//     border-radius: 4px;
+//     transition: 0.3s linear;
+//     &:hover {
+//       transition: 0.3s linear;
+//       box-shadow: 0 0 0 2px $color-yellow inset, 0 0 0 4px white inset;
+//     }
+//   }
+//   &__image-color-items {
+//     display: flex;
+//     position: absolute;
+//     bottom: 16px;
+//     left: 16px;
+//   }
+//   &__image-color-items > h3 {
+//     display: inherit;
+//     align-items: center;
+//     text-align: center;
+//   }
+//   &__image-color {
+//     margin-right: 8px;
+//     width: 32px;
+//     height: 32px;
+//     border-radius: 50px;
+//   }
+//   &__image-color--active {
+//     box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+//   }
+// }
