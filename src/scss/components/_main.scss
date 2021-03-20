@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     padding: 16px 24px;
-    height: 518px;
+    height: auto;
   }
 
   &__title {
@@ -17,7 +17,8 @@
     line-height: 125%;
   }
   &__title-create {
-    width: 100%;
+    max-width: 390px;
+    min-width: 390px;
   }
   &__title-recreate {
     width: 92%;
@@ -124,6 +125,8 @@
     right: 36px;
   }
   &__couchMainTwo {
+    height: auto;
+    width: 100%;
     margin-top: 135px;
   }
   &__bedMainThree {

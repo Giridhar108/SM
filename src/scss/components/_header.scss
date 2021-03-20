@@ -138,3 +138,24 @@
   left: -33px;
   top: 9px;
 }
+
+
+.nav {
+  &__animate {
+    width: 32px;
+    height: 32px;
+  }
+  &__logo {
+    display: flex;
+    align-items: center;
+  }
+  &__logo-text {
+    margin-left: 8px;
+    font-family: Port Lligat Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 39px;
+    color: rgba(41, 22, 65, 1);
+  }
+}

@@ -9,13 +9,15 @@
   &__logo,
   &__kinds,
   &__menu,
-  &__contacts {
+  &__contacts,
+  &__contacts-end {
     margin: 8px;
   }
 
   &__kinds-title,
   &__menu-title,
-  &__contacts-title {
+  &__contacts-title,
+  &__contacts-end-title {
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
@@ -27,9 +29,9 @@
   }
   &__logo-end {
     display: none;
-    margin-top: 8px;
     width: 228px;
     margin: 0 auto;
+    margin-top: 16px;
     text-align: center;
   }
   &__logo-svg, &__logo-end-svg {
@@ -58,7 +60,7 @@
   &__kinds {
     width: 200px;
   }
-  &__kinds-ul, &__menu-ul, &__contacts-ul {
+  &__kinds-ul, &__menu-ul, &__contacts-ul, &__contacts-end-ul {
     margin-top: 12px;
   }
   &__kinds-re {
@@ -67,19 +69,33 @@
   &__menu-item{
     margin-top: 12px;
   }
-  &__contacts {
+
+  &__contacts-end {
+    display: none;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__contacts, &__contacts-end {
     width: 242px;
   }
   &__contacts-ul > li{
     margin-top: 12px;
   }
-  &__contacts-social {
+  &__contacts-end-ul > li{
+    margin-top: 12px;
+  }
+
+  &__contacts-social, &__contacts-end-social {
     display: flex;
   }
-  &__contacts-social-item {
+  &__contacts-end-social {
+    justify-content: center;
+  }
+  &__contacts-social-item, &__contacts-end-social-item {
     margin-right: 8px;
   }
-  &__contacts-policy {
+  &__contacts-policy, &__contacts-end-policy {
     min-width: 243px;
     border-bottom: 1px solid $black;
   }
