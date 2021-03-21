@@ -88,7 +88,7 @@ function Main() {
               </div>
               <Route path="/" exact>
                 <Fade left>
-                  <h1 className="main__title">
+                  <h1 className="main__title main__title-create">
                     Индивидуальное изготовление и перетяжка мебели
                   </h1>
                 </Fade>
@@ -364,10 +364,10 @@ function Main() {
               </div>
             </Route>
             <Route path="/recreate" exact>
-              <div className="main__right-recreate">
+              <div className="main__right-create">
                 <Fade right>
                   <img
-                    className="main__bedMainThree"
+                    className="main__couchMainTwo"
                     src={bedMainThree}
                     alt=""
                   />

@@ -3,7 +3,7 @@
     &__svg {
       margin-top: 96px;
     }
-    &__title-create {
+    &__title{
       font-size: 32px;
     }
   }
@@ -18,7 +18,7 @@
     &__svg {
       margin-top: 64px;
     }
-    &__title-create {
+    &__title{
       margin-top: 48px;
     }
   }
@@ -29,9 +29,13 @@
     &__svg {
       margin-top: 56px;
     }
-    &__title-create {
+    &__title{
       margin-top: 32px;
       min-width: 320px;
+    }
+    &__lamp {
+      width: 108px;
+      height: 108px;
     }
   }
 }
@@ -44,7 +48,7 @@
     &__svg {
       margin-top: 56px;
     }
-    &__title-create {
+    &__title{
       margin-top: 32px;
       min-width: 320px;
     }
@@ -63,7 +67,7 @@
     &__svg {
       margin-top: 68px;
     }
-    &__title-create {
+    &__title{
       font-size: 28px;
     }
     &__btn {
@@ -78,6 +82,10 @@
     &__wrapper {
       flex-direction: column;
     }
+    &__couchMain {
+      margin-top: 24px;
+      bottom: 0;
+    }
     &__couchMainTwo {
       margin-top: 24px;
     }
@@ -89,7 +97,7 @@
       display: none;
       // margin-top: 104px;
     }
-    &__title-create {
+    &__title{
       margin-top: 16px;
       font-size: 28px;
     }
@@ -97,16 +105,17 @@
       width: 160px;
       height: 32px;
     }
-    &__logo {
-      // display: none;
+    &__lamp {
+      display: none;
     }
   }
 }
 
 @media (max-width: 420px) {
   .main {
-    &__title-create {
-      max-width: 325px;
+    &__title{
+      max-width: 100%;
+      min-width: 100%;
     }
   }
 }
