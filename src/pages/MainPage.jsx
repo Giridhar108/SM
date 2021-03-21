@@ -19,8 +19,8 @@ function MainPages() {
       <Main />
       <Bolits />
       <AboutUs />
-      <HowWork />
       <TwoKinds />
+      <HowWork />
       <Furniture/>
       <OurWorks />
       <LinkCalc />
