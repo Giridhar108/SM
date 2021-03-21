@@ -36,7 +36,7 @@ function Header() {
 
   orederItems();
 
-  const [sidebar, setSidebar] = useState(false);
+  const [sidebar, setSidebar] = React.useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
 
@@ -52,8 +52,26 @@ function Header() {
     document.body.addEventListener("click", handleOutsideClick);
   }, []);
 
+  const [goingUp, setGoingUp] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (window.innerWidth < 650 && currentScrollY > 0) {
+        setGoingUp(true);
+      }
+      if (window.innerWidth < 650 && currentScrollY <= 0) {
+        setGoingUp(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [goingUp]);
+
   return (
-    <header className="header">
+    <header className={classNames('header', {
+      'shadow-header': goingUp,
+    })}>
       <div className="container">
         <div className="header__wrapper">
           <Fade right>

@@ -1,29 +1,20 @@
-// .bolits {
-//   text-align: center;
+@media (max-width: 600px) {
+  .bolits {
+    margin-top: 32px;
+  }
+}
 
-//   &__item {
-//     background-color: $background;
-//     padding: 24px;
-//     width: 335px;
-//     height: 298px;
-//     margin: 0 8px 24px 8px;
-//     border-radius: 4px;
-//     box-shadow: 0 .125rem .5rem rgba(0,0,0,.15)
-//   }
-//   &__title {
-//     width: 248px;
-//     margin: 0 auto;
-//     margin-top: 24px;
-//     font-style: normal;
-//     font-weight: 500;
-//     font-size: 26px;
-//     line-height: 28px;
-//   }
-//   &__desctiption {
-//     margin: 24px 0;
-//     font-style: normal;
-//     font-weight: normal;
-//     font-size: 17px;
-//     line-height: 18px;
-//   }
-// }
+@media (max-width: 390px) {
+  .bolits {
+    &__item {
+      width: 300px;
+      height: auto;
+    }
+    &__title {
+      font-size: 22px;
+    }
+    &__description {
+      margin-bottom: 0;
+    }
+  }
+}

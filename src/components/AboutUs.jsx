@@ -1,13 +1,34 @@
+import React from "react";
 import kushetka from "../assets/images/kushetka.png";
+import aboutUsHorizont from "../assets/images/aboutUsHorizont.png";
+
 
 function AboutUs() {
+
+  const [state, setstate] = React.useState(false)
+
+  React.useEffect(() => {
+    const handleImg = () => {
+      if (window.innerWidth <= 800) {
+        setstate(true)
+      }
+      if (window.innerWidth > 800) {
+        setstate(false)
+      }
+    }
+    handleImg()
+    window.addEventListener("resize", handleImg, { passive: false });
+    return () => window.removeEventListener("resize", handleImg);
+
+  }, [state])
+
   return (
     <div className="aboutus" id="aboutus">
       <div className="container">
         <div className="aboutus__wrapper">
           <div className="aboutus__img-wrapper">
             <img
-              src={kushetka}
+              src={state ? aboutUsHorizont : kushetka}
               alt=""
               width="600"
               height="400"
