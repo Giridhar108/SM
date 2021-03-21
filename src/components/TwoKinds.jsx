@@ -8,7 +8,7 @@ function TwoKinds() {
     <div className="twokinds" id="twokinds">
       <div className="container">
         <div className="twokinds__wrapper">
-          <a href="/create" className="twokinds__item twokinds__create">
+          <Link to="/create" className="twokinds__item twokinds__create">
             <div className="twokinds__img">
               <img src={TwoKindsArmChairOne} alt="" />
             </div>
@@ -24,9 +24,9 @@ function TwoKinds() {
 
               <div className="twokinds__more twokinds__create-more">Подробнее</div>
             </div>
-          </a>
+          </Link>
 
-          <a href="/recreate" className="twokinds__item twokinds__recreate">
+          <Link to="/recreate" className="twokinds__item twokinds__recreate">
             <div className="twokinds__img">
               <img src={TwoKindsArmChairTwo} alt="" />
             </div>
@@ -40,7 +40,7 @@ function TwoKinds() {
 
               <div className="twokinds__more">Подробнее</div>
             </div>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

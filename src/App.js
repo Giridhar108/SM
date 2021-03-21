@@ -6,23 +6,40 @@ import Recreate from "./pages/Recreate";
 import Calculator from "./pages/Calculator";
 import Order from "./pages/Order";
 import Policy from "./pages/Policy";
-import { Header } from "../src/components";
+import { Header, ScrollToTop } from "../src/components";
 // const MainPage = React.lazy(() => import("./pages/MainPage"));
 
 function App() {
   return (
     <div>
-    <Header />
-      {/* <React.Suspense fallback={<Policy />}> */}
-        <div className="wrapper">
-          <Route path="/" component={MainPage} exact />
-          <Route path="/create" component={Create} exact />
-          <Route path="/recreate" component={Recreate} exact />
-          <Route path="/calculator" component={Calculator} exact />
-          <Route path="/order" component={Order} exact />
-          <Route path="/Policy" component={Policy} exact />
-        </div>
-    {/* </React.Suspense> */}
+      <Header />
+      <div className="wrapper">
+        <Route path="/" exact>
+          <ScrollToTop />
+          <MainPage />
+        </Route>
+        <Route path="/create" exact>
+          <ScrollToTop />
+          <Create />
+        </Route>
+        <Route path="/recreate" exact>
+          <ScrollToTop />
+          <Recreate />
+        </Route>
+        <Route path="/calculator" exact>
+          <ScrollToTop />
+          <Calculator />
+        </Route>
+        <Route path="/order" exact>
+          <ScrollToTop />
+          <Order />
+        </Route>
+        <Route path="/policy" exact>
+          <ScrollToTop />
+          <Policy />
+        </Route>
+      </div>
+      {/* </React.Suspense> */}
     </div>
   );
 }

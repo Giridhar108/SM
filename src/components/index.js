@@ -19,6 +19,8 @@ export { default as CalcStyle } from './CalcStyle'
 export { default as Calcyc } from './Calcyc'
 export { default as Modal } from './Modal'
 export { default as RecreateCta } from './RecreateCta'
+export { default as ScrollToTop } from './ScrollToTop'
+
 
 
 

@@ -1,5 +1,6 @@
 import React from "react";
 import Fade from "react-reveal/Fade";
+import { Link } from "react-router-dom";
 
 function footer() {
   return (
@@ -8,7 +9,7 @@ function footer() {
         <div className="container">
           <div className="footer__wrapper">
             <div className="footer__logo">
-              <a className="footer__logo-svg" href="/">
+              <Link className="footer__logo-svg" to="/">
                 <svg
                   className="svg__animate"
                   width="64"
@@ -59,7 +60,7 @@ function footer() {
                   />
                 </svg>
                 <div className="footer__logo-text">Soul mebel</div>
-              </a>
+              </Link>
 
               <div className="footer__logo-subtitle">
                 Индивидуальное изготовление и перетяжка мебели
@@ -70,10 +71,10 @@ function footer() {
               <div className="footer__kinds-title">Виды услуг:</div>
               <ul className="footer__kinds-ul">
                 <li className="footer__kinds-ind">
-                  <a href="/create">Индивидуальное изготовление мебели</a>
+                  <Link to="/create">Индивидуальное изготовление мебели</Link>
                 </li>
                 <li className="footer__kinds-re">
-                  <a href="/recreate">Перетяжка мебели</a>
+                  <Link to="/recreate">Перетяжка мебели</Link>
                 </li>
               </ul>
             </div>
@@ -82,20 +83,20 @@ function footer() {
               <div className="footer__menu-title">Меню:</div>
               <ul className="footer__menu-ul">
                 <li className="footer__menu-item">
-                  <a href="/#aboutus">О нас</a>
+                  <Link to="/#aboutus">О нас</Link>
                 </li>
                 <li className="footer__menu-item">
-                  <a href="/#howwork">Как мы работаем</a>
+                  <Link to="/#howwork">Как мы работаем</Link>
                 </li>
                 <li className="footer__menu-item">
-                  <a href="/calculator" className="menu__link">
+                  <Link to="/calculator" className="menu__link">
                     Калькулятор
-                  </a>
+                  </Link>
                 </li>
                 <li className="footer__menu-item">
-                  <a href="/order" className="menu__link">
+                  <Link to="/order" className="menu__link">
                     Заказ
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
