@@ -1,44 +1,89 @@
-// .howwork {
-//   margin-top: 64px;
-//   &__title {
-//     margin-left: 24px;
-//     font-style: normal;
-//     font-weight: normal;
-//     font-size: 32px;
-//     line-height: 150%;
-//   }
-//   &__items {
-//     margin-top: 64px;
-//   }
-//   &__item {
-//     display: flex;
-//     align-items: center;
-//   }
+@media (max-width: 845px) {
+  .howwork {
+    &__item {
+      // margin-top: 24px;
+    }
+    &__item-img {
+      margin-left: 24px;
+    }
+    &__item-img:nth-child(2n) {
+      margin-right: 24px;
+    }
+  }
+}
 
-//   &__item:nth-child(2n){
-//     flex-direction: row-reverse;
-//   }
-//   &__item-inner {
-//     width: 265px;
-//   }
-//   &__item-title {
-//     font-style: normal;
-//     font-weight: 500;
-//     font-size: 24px;
-//     line-height: 28px;
-//   }
-//   &__item-text {
-//     margin-top: 32px;
-//     font-style: normal;
-//     font-weight: normal;
-//     font-size: 18px;
-//     line-height: 126%;
-//   }
+@media (max-width: 770px) {
+  .howwork {
+    &__item {
+      margin-top: 48px;
+    }
+    &__item-img {
+      margin-left: 0;
+    }
+    &__item-img:nth-child(2n) {
+      margin-right: 0;
+    }
+    &__item-inner {
+      width: 100%;
+    }
+  }
+}
 
-//   &__item-img {
-//     margin-left: 64px;
-//   }
-//   &__item-img:nth-child(2n) {
-//     margin-right: 64px;
-//   }
-// }
+@media (max-width: 600px) {
+  .howwork {
+    margin-top: 32px;
+    &__items {
+      margin: 0;
+    }
+    &__item {
+      display: flex;
+      align-items: center;
+    }
+    &__item:nth-child(1) {
+      margin-top: 32px;
+    }
+    &__title {
+      font-size: 30px;
+    }
+    &__item-title {
+      font-size: 22px;
+    }
+    &__item-text {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .howwork {
+
+    &__item {
+      display: flex;
+      align-items: flex-end;
+    }
+    &__title {
+      margin: 0;
+      font-size: 30px;
+    }
+    &__item-title {
+      min-width: 165px;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 28px;
+    }
+    &__item-text {
+      margin-top: 20px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 126%;
+    }
+    &__item-img img {
+      width: 100%;
+    }
+    &__item-inner {
+      width: 100%;
+    }
+  }
+}
