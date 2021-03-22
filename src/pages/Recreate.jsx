@@ -6,7 +6,8 @@ import {
   HowWork,
   BeforeAfter,
   OurWorks,
-  RecreateCta
+  RecreateCta,
+  LinkCalc
 } from "../components";
 
 function Recreate() {
@@ -17,7 +18,7 @@ function Recreate() {
       <BeforeAfter/>
       <HowWork />
       <OurWorks />
-      <RecreateCta/>
+      <LinkCalc />
       <Footer />
     </div>
   );
