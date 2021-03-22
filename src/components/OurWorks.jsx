@@ -9,8 +9,8 @@ function OurWorks() {
   return (
     <div className="ourworks">
       <div className="container">
-        <div className="ourworks__wrapper">
           <div className="ourworks__title">Наши работы:</div>
+        <div className="ourworks__wrapper">
           <div className="ourworks__items">
             <div className="ourworks__item ">
               <h4 className="ourworks__item-title">Диван</h4>
