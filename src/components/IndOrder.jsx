@@ -47,11 +47,11 @@ function Indorder() {
 
             <div className="indorder__item">
               <img src={redPufInd} alt="" className="indorder__img-2" />
-              <p className="indorder__item-subtitle-two indorder__item-subtitle">
+              <div className="indorder__item-subtitle-two indorder__item-subtitle">
                 <p>
                   Пуф <b> сделанный на заказ</b>
                 </p>
-              </p>
+              </div>
 
               <div className="indorder__item-discription">
                 <p className="indorder__item-text">

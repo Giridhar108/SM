@@ -23,6 +23,10 @@
     align-items: center;
     margin: 0 auto;
   }
+  &__png-img {
+    width: 100%;
+  }
+
   .furniture__item {
     display: flex;
     align-items: flex-end;

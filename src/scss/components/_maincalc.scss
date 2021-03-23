@@ -5,7 +5,9 @@
     justify-content: space-between;
     padding: 16px 24px;
   }
-
+  &__left {
+    z-index: 1;
+  }
   &__logo {
     display: flex;
     align-items: center;

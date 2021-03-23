@@ -8,7 +8,7 @@ import calcMainImg from "../assets/images/calcMainImg.png";
 
 function MainCalc() {
   return (
-    <div className="mainCalc">
+    <div className="maincalc">
       <div className="container">
         <div className="maincalc__wrapper">
           <div className="maincalc__left">
@@ -16,7 +16,7 @@ function MainCalc() {
               <Roll left>
                 <div className="main__logo-svg">
                   <svg
-                    className="svg__animate"
+                    className="maincalc__animate"
                     width="64"
                     height="64"
                     viewBox="0 0 64 64"

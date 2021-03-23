@@ -1,7 +1,7 @@
 import React from "react";
 import Modal from "./Modal";
 import { useState } from "react";
-import { Route } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 import Zoom from "react-reveal/Zoom";
 import calcChair from "../assets/images/calcChair.png";
 import calcChairWhite from "../assets/images/calcChairWhite.png";
@@ -40,9 +40,9 @@ function LinkCalc() {
                   нужен с помощью нашего калькулятора. Мы с вами свяжемся,
                   обсудим детали заказа и дальнейшей работы.
                 </p>
-                <a href="/calculator" className="linkcalc__btn">
+                <Link to="/calculator" className="linkcalc__btn">
                   Калькулятор
-                </a>
+                </Link>
               </Route>
               <Route path="/create" exact>
                 <div className="linkcalc__title">Калькулятор заказа</div>
@@ -51,9 +51,9 @@ function LinkCalc() {
                   нужен с помощью нашего калькулятора. Мы с вами свяжемся,
                   обсудим детали заказа и дальнейшей работы.
                 </p>
-                <a href="/calculator" className="linkcalc__btn">
+                <Link to="/calculator" className="linkcalc__btn">
                   Калькулятор
-                </a>
+                </Link>
               </Route>
               <Route path="/recreate" exact>
                 <div className="linkcalc__title">Хотите обновить мебель?</div>
@@ -61,9 +61,9 @@ function LinkCalc() {
                   Оставьте заявку, наш менеджер свяжется с вами и обсудит детали
                   работы. Если вас устроят сроки и цена, то будем работать.
                 </p>
-                <a onClick={setModal} className="linkcalc__btn">
-                  Заказать
-                </a>
+                <Link to="/calculator" className="linkcalc__btn">
+                  Калькулятор
+                </Link>
               </Route>
             </div>
           </div>
