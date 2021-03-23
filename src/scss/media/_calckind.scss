@@ -39,6 +39,7 @@
 @media (max-width: 530px) {
   .calckind {
     .boxshadow {
+      overflow: hidden;
       margin: 4px;
       width: 145px;
       height: 70px;
@@ -51,6 +52,7 @@
     }
     .furniture__item-img {
       z-index: 1;
+      height: auto;
     }
     .furniture__item-img img{
       width: 90%;
