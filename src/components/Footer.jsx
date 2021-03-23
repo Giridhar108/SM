@@ -83,10 +83,10 @@ function footer() {
               <div className="footer__menu-title">Меню:</div>
               <ul className="footer__menu-ul">
                 <li className="footer__menu-item">
-                  <Link to="/#aboutus">О нас</Link>
+                  <a href="/#aboutus">О нас</a>
                 </li>
                 <li className="footer__menu-item">
-                  <Link to="/#howwork">Как мы работаем</Link>
+                  <a href="/#howwork">Как мы работаем</a>
                 </li>
                 <li className="footer__menu-item">
                   <Link to="/calculator" className="menu__link">
