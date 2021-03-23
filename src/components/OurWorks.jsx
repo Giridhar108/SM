@@ -9,7 +9,7 @@ function OurWorks() {
   return (
     <div className="ourworks">
       <div className="container">
-          <div className="ourworks__title">Наши работы:</div>
+          <h3 className="ourworks__title">Наши работы:</h3>
         <div className="ourworks__wrapper">
           <div className="ourworks__items">
             <div className="ourworks__item ">

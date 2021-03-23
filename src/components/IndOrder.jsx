@@ -14,7 +14,7 @@ function Indorder() {
   } else {
     document.querySelector("body").classList.remove("hidden");
   }
-  const local = document.getElementsByTagName('h1')[0]
+  const local = document.getElementsByTagName("h1")[0];
 
   return (
     <div className="indorder">
@@ -25,7 +25,7 @@ function Indorder() {
           </h3>
           <div className="indorder__items">
             <div className="indorder__item">
-              <img src={armChairInd} alt="" className="" />
+              <img src={armChairInd} alt="" className="indorder__img-1" />
               <p className="indorder__item-subtitle">
                 Кресло <b>сделанное на заказ</b>
               </p>
@@ -44,10 +44,13 @@ function Indorder() {
                 </p>
               </div>
             </div>
+
             <div className="indorder__item">
-              <img src={redPufInd} alt="" className="" />
+              <img src={redPufInd} alt="" className="indorder__img-2" />
               <p className="indorder__item-subtitle-two indorder__item-subtitle">
-                Пуф <b>сделанный на заказ</b>
+                <p>
+                  Пуф <b> сделанный на заказ</b>
+                </p>
               </p>
 
               <div className="indorder__item-discription">
@@ -57,21 +60,21 @@ function Indorder() {
                 <p className="indorder__item-text">
                   Вы можете сделать заказ прямо сейчас!
                 </p>
+                <a onClick={setModal} className="indorder__item-btn">
+                  Заказать
+                </a>
               </div>
-              <a onClick={setModal} className="indorder__item-btn">
-                Заказать
-              </a>
             </div>
+
             <div className="indorder__item">
-                <h4 className="indorder__item-text-title indorder__item-text-title-three">
-                  <b>Прекрасный</b> выбор
-                </h4>
-              <img src={blueCouchInd} alt="" className="" />
+              <h4 className="indorder__item-text-title indorder__item-text-title-three">
+                <b>Прекрасный</b> выбор
+              </h4>
+              <img src={blueCouchInd} alt="" className="indorder__img-3" />
               <p className="indorder__item-subtitle indorder__item-subtitle-three">
                 <b>Необычный</b> диван
               </p>
-              <div className="indorder__item-discription">
-              </div>
+              <div className="indorder__item-discription"></div>
             </div>
           </div>
         </div>

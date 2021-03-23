@@ -40,8 +40,10 @@
 
 @media (max-width: 420px) {
   .furniture {
+    margin-top: 32px;
     &__title {
       margin: 0;
+      font-size: 26px;
     }
   }
 }

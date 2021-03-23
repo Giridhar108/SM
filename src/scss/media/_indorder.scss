@@ -1,86 +1,132 @@
-// .indorder {
-//   margin-top: 64px;
-//   margin-bottom: 112px;
-//   &__wrapper {
-//     padding: 0 64px 0 24px;
-//   }
-//   &__title {
-//     font-style: normal;
-//     font-weight: 400;
-//     font-size: 32px;
-//     line-height: 150%;
-//   }
-//   &__items {
-//     margin-top: 32px;
-//   }
-//   &__item {
-//     position: relative;
-//     display: flex;
-//     align-items: center;
-//     left: 70px;
-//   }
+@media (max-width: 840px) {
+  .indorder {
+    &__wrapper {
+      padding: 0 32px 0 12px;
+    }
+  }
+}
 
-//   &__item:nth-child(2) {
-//     flex-direction: column;
-//     align-items: flex-end;
-//     padding-right: 64px;
-//   }
-//   &__item:nth-child(3) {
-//     margin-top: 42px;
-//     flex-direction: column;
-//     align-items: baseline;
-//   }
-//   &__item-text-title {
-//     font-style: normal;
-//     font-weight: normal;
-//     font-size: 24px;
-//     line-height: 126%;
-//   }
-//   &__item-text-title-three {
-//     margin-bottom: 8px;
-//   }
-//   &__item-subtitle {
-//     position: absolute;
-//     bottom: -16px;
-//     font-style: normal;
-//     font-weight: normal;
-//     font-size: 14px;
-//     line-height: 16px;
-//   }
-//   &__item-subtitle-two {
-//     position: relative;
-//     top: 2px;
-//     margin-right: 100px;
-//   }
-//   &__item-subtitle-three {
-//     bottom: -48px;
-//   }
-//   &__item-text {
-//     margin-top: 16px;
-//     font-style: normal;
-//     font-weight: normal;
-//     font-size: 15px;
-//     line-height: 18px;
-//   }
-//   &__item-discription {
-//     margin-left: 108px;
-//     width: 264px;
-//   }
-//   &__item-btn {
-//     display: flex;
-//     margin-top: 32px;
-//     justify-content: center;
-//     align-items: center;
-//     width: 176px;
-//     height: 40px;
-//     background-color: $color-yellow;
-//     border-radius: 4px;
-//     border: none;
-//     box-shadow: 0 1px 3px #cbcbcb;
-//     transition: all 0.3s;
-//     margin-right: 88px;
-//     &:hover {
-//       box-shadow: 3px 4px 3px #cbcbcb;
-//     }
-//   }
-// }
+@media (max-width: 780px) {
+  .indorder {
+    &__wrapper {
+      padding: 0 12px 0 12px;
+    }
+    &__item {
+      left: 0;
+    }
+    &__item:nth-child(2) {
+      padding-right: 0;
+    }
+  }
+}
+
+@media (max-width: 690px) {
+  .indorder {
+    &__wrapper {
+      padding: 0;
+    }
+    &__item-discription {
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .indorder {
+    margin-top: 32px;
+    &__img-3 {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .indorder {
+    &__img-3 {
+      width: 100%;
+    }
+    &__img-1 {
+      width: 50%;
+    }
+    &__img-2 {
+      width: 50%;
+    }
+    &__item {
+      margin-top: 12px;
+    }
+    &__item-btn {
+      width: 160px;
+      height: 32px;
+      margin-right: 105px;
+    }
+
+    &__item:nth-child(2) {
+      margin-top: 48px;
+      flex-direction: row-reverse;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding-right: 0;
+    }
+    &__item-subtitle-two {
+      display: flex;
+      align-items: flex-end;
+      position: absolute;
+      top: 0;
+      margin-right: 0;
+    }
+    &__item-subtitle {
+      font-size: 12px;
+    }
+    &__item-text-title {
+      font-size: 22px;
+    }
+    &__item-discription {
+      // margin-left: 108px;
+      align-self: center;
+      width: 200px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .indorder {
+    margin-bottom: 50px;
+    &__title {
+      font-size: 28px;
+    }
+    &__items {
+      margin-top: 24px;
+    }
+    &__item {
+      margin-top: 0;
+      flex-direction: column;
+    }
+    &__item-subtitle {
+      display: none;
+    }
+    &__item-discription {
+      width: 100%;
+    }
+    &__item:nth-child(2) {
+      margin-top: 48px;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__item-btn {
+      margin: 0 auto;
+      margin-top: 12px;
+    }
+    &__img-3 {
+      width: 100%;
+    }
+    &__img-1 {
+      width: 65%;
+    }
+    &__img-2 {
+      width: 65%;
+    }
+    &__item-text-title-three {
+      font-size: 20px;
+    }
+  }
+}
