@@ -36,7 +36,8 @@
     }
   }
   &__description {
-    max-width: 535px;
+    width: 545px;
+    min-width: 545px;
     height: 370px;
     margin-right: 8px;
   }
