@@ -1,9 +1,9 @@
 import React from "react";
-import divan from "../assets/images/imgdivan.jpg";
-import puf from "../assets/images/imgpuf.jpg";
-import stul from "../assets/images/imgstul.jpg";
-import kreslo from "../assets/images/imgkreslo.jpg";
-import krovat from "../assets/images/imgkrovat.jpg";
+import divan from "../assets/images/imgdivan.webp";
+import puf from "../assets/images/imgpuf.webp";
+import stul from "../assets/images/imgstul.webp";
+import kreslo from "../assets/images/imgkreslo.webp";
+import krovat from "../assets/images/imgkrovat.webp";
 
 function OurWorks() {
   return (

@@ -10,15 +10,15 @@ import curbstone from "../assets/images/curbstone.webp";
 import glass from "../assets/images/glass.webp";
 import pouf from "../assets/images/pouf.webp";
 
-import CalcSofa from "../assets/images/kind/CalcKindSofa.png";
-import CalcArmchair from "../assets/images/kind/armchair.png";
-import CalcBed from "../assets/images/kind/bed.png";
-import CalcChair from "../assets/images/kind/chair.png";
-import CalcChest from "../assets/images/kind/chest.png";
-import CalcDoublebed from "../assets/images/kind/double-bed.png";
-import CalcMirror from "../assets/images/kind/mirror.png";
-import CalcNightstand from "../assets/images/kind/nightstand.png";
-import CalcPouf from "../assets/images/kind/pouf.png";
+import CalcSofa from "../assets/images/kind/calckindsofa.webp";
+import CalcArmchair from "../assets/images/kind/armchair.webp";
+import CalcBed from "../assets/images/kind/bed.webp";
+import CalcChair from "../assets/images/kind/chair.webp";
+import CalcChest from "../assets/images/kind/chest.webp";
+import CalcDoublebed from "../assets/images/kind/double-bed.webp";
+import CalcMirror from "../assets/images/kind/mirror.webp";
+import CalcNightstand from "../assets/images/kind/nightstand.webp";
+import CalcPouf from "../assets/images/kind/pouf.webp";
 
 import { useDispatch, useSelector } from "react-redux";
 import { setKind } from "../redux/action/calculator";
@@ -28,47 +28,47 @@ const furnitureItems = [
   {
     title: "Кровать",
     img: bed,
-    webp: CalcSofa,
+    png: CalcSofa,
   },
   {
     title: "Диван",
     img: sofa,
-    webp: CalcBed,
+    png: CalcBed,
   },
   {
     title: "Панель",
     img: panel,
-    webp: CalcDoublebed,
+    png: CalcDoublebed,
   },
   {
     title: "Кресло",
     img: armchair,
-    webp: CalcArmchair,
+    png: CalcArmchair,
   },
   {
     title: "Стул",
     img: cheir,
-    webp: CalcChair,
+    png: CalcChair,
   },
   {
     title: "Комод",
     img: commode,
-    webp: CalcChest,
+    png: CalcChest,
   },
   {
     title: "Тумба",
     img: curbstone,
-    webp: CalcNightstand,
+    png: CalcNightstand,
   },
   {
     title: "Зеркало",
     img: glass,
-    webp: CalcMirror,
+    png: CalcMirror,
   },
   {
     title: "Пуф",
     img: pouf,
-    webp: CalcPouf,
+    png: CalcPouf,
   },
 ];
 
@@ -86,15 +86,15 @@ function CalcKind() {
 
         <h3 className="calckind__title">Выберите вид мебели:</h3>
         <div className="calckind__wrapper">
-          <div className="calckind__webp">
+          <div className="calckind__png">
             {furnitureItems.map((item) => {
               if (item.title === kind) {
                 return (
                   <Zoom key={item.title}>
                     <img
-                      src={item.webp}
+                      src={item.png}
                       alt=""
-                      className="calckind__webp-img"
+                      className="calckind__png-img"
                     />
                   </Zoom>
                 );
