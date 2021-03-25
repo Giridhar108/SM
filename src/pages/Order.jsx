@@ -17,7 +17,6 @@ function Order() {
   const dispatch = useDispatch();
   const orderItems = useSelector((state) => state.calculator.orderItems);
   const countItems = useSelector((state) => state.calculator.countItems);
-  console.log('sadgf')
 
   const orederItems = () => {
     const numbers = orderItems.map((item) => item && item.number);
@@ -31,7 +30,7 @@ function Order() {
         }
       }
     }
-    dispatch(setCountItems(result.filter(item => item).length))
+    dispatch(setCountItems(result.filter((item) => item).length));
     return result;
   };
 
@@ -58,7 +57,7 @@ function Order() {
           console.log("SUCCESS!", response.status, response.text);
           e.target.reset();
           localStorage.clear();
-          dispatch(setCountItems(orederItems().filter(item => item).length))
+          dispatch(setCountItems(orederItems().filter((item) => item).length));
         },
         function (error) {
           console.log("FAILED...", error);
@@ -68,7 +67,7 @@ function Order() {
 
   const deleteItem = (number) => {
     // localStorage.removeItem(number);
-    localStorage.setItem(number, null)
+    localStorage.setItem(number, null);
     dispatch(delateOrderItems(number));
   };
 
@@ -89,12 +88,13 @@ function Order() {
 
   return (
     <div className="order-inner">
-      {orederItems().filter(item => item).length ? (
+      {orederItems().filter((item) => item).length ? (
         <div className="order">
           <div className="container">
             <h3>Ваш заказ</h3>
-            {orederItems().filter(item => item).map(
-              ({ kind, style, cloth, color, filler, number, count }) => {
+            {orederItems()
+              .filter((item) => item)
+              .map(({ kind, style, cloth, color, filler, number, count }) => {
                 const handleAddItemOrder = () => {
                   addItem(number);
                 };
@@ -106,24 +106,38 @@ function Order() {
                 };
                 return (
                   <div
-                    className="calcyc__item"
+                    className="calcyc__items"
                     key={`${kind}_${style}_${cloth}_${color}_${filler}`}
                   >
-                    <div className="calcyc__wrapper-item">
-                      <div className="calcyc__title-inner">Вид:</div>
-                      <div className="calcyc__choise">{kind}</div>
-                      <div className="calcyc__title-inner">Стиль:</div>
-                      <div className="calcyc__choise">{style}</div>
-                      <div className="calcyc__title-inner">Ткань:</div>
-                      <div className="calcyc__choise">
-                        {cloth}
-                        <div
-                          className="calcyc__choise-color"
-                          style={{ background: `${color ? color : "none"}` }}
-                        ></div>
+                    <div className="calcyc__item-svg">
+                      <div className="calcyc__wrapper-item">
+                        <div className="calcyc__item">
+                          <div className="calcyc__title-inner">Вид:</div>
+                          <div className="calcyc__choise">{kind}</div>
+                        </div>
+                        <div className="calcyc__item">
+                          <div className="calcyc__title-inner">Стиль:</div>
+                          <div className="calcyc__choise">{style}</div>
+                        </div>
+                        <div className="calcyc__item">
+                          <div className="calcyc__title-inner">Ткань:</div>
+                          <div className="calcyc__choise">
+                            {cloth}
+                            <div
+                              className="calcyc__choise-color"
+                              style={{
+                                background: `${color ? color : "none"}`,
+                              }}
+                            ></div>
+                          </div>
+                        </div>
+                        <div className="calcyc__item">
+                          <div className="calcyc__title-inner">
+                            Наполнитель:
+                          </div>
+                          <div className="calcyc__choise">{filler}</div>
+                        </div>
                       </div>
-                      <div className="calcyc__title-inner">Наполнитель:</div>
-                      <div className="calcyc__choise">{filler}</div>
                       <div className="calcyc__svg">
                         <svg
                           onClick={handleDeleteItem}
@@ -202,10 +216,36 @@ function Order() {
                         </svg>
                       </div>
                     </div>
+                    <div className="calcyc__svg-resp">
+                        <svg
+                          onClick={handleDeleteItem}
+                          width="24"
+                          height="24"
+                          viewBox="0 0 32 32"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M16 0C7.17725 0 0 7.17725 0 16C0 24.8228 7.17725 32 16 32C24.8228 32 32 24.8228 32 16C32 7.17725 24.8228 0 16 0Z"
+                            fill="#EB5757"
+                          />
+                          <path
+                            d="M16 32C7.17725 32 0 24.8228 0 16C0 7.17725 7.17725 0 16 0C24.8228 0 32 7.17725 32 16C32 24.8228 24.8228 32 16 32ZM16 2C8.28003 2 2 8.28003 2 16C2 23.72 8.28003 30 16 30C23.72 30 30 23.72 30 16C30 8.28003 23.72 2 16 2Z"
+                            fill="black"
+                          />
+                          <path
+                            d="M11.0508 21.9507C10.7947 21.9507 10.5386 21.8533 10.344 21.6572C9.95337 21.2666 9.95337 20.6333 10.344 20.2427L20.2439 10.3428C20.6348 9.9519 21.2681 9.9519 21.6587 10.3428C22.0493 10.7334 22.0493 11.3667 21.6587 11.7573L11.7585 21.6572C11.5613 21.8533 11.3054 21.9507 11.0508 21.9507V21.9507Z"
+                            fill="black"
+                          />
+                          <path
+                            d="M20.9492 21.9507C20.6934 21.9507 20.4373 21.8533 20.2427 21.6572L10.3428 11.7573C9.9519 11.3667 9.9519 10.7334 10.3428 10.3428C10.7334 9.9519 11.3667 9.9519 11.7573 10.3428L21.6572 20.2427C22.0481 20.6333 22.0481 21.2666 21.6572 21.6572C21.4614 21.8533 21.2053 21.9507 20.9492 21.9507Z"
+                            fill="black"
+                          />
+                        </svg>
+                      </div>
                   </div>
                 );
-              }
-            )}
+              })}
 
             <div className="calcyc__order">
               <h2 className="modal-title">Оставьте свои контактные данные.</h2>
@@ -247,7 +287,11 @@ function Order() {
                     ref={register({ required: true })}
                   />
                   <label>
-                    С <a className="modal__policy-link" href="/Policy">политикой конфиденциальности</a> ознакомлен
+                    С{" "}
+                    <a className="modal__policy-link" href="/Policy">
+                      политикой конфиденциальности
+                    </a>{" "}
+                    ознакомлен
                   </label>
                 </div>
                 <button type="submit" className="calcyc__btn">
@@ -255,7 +299,6 @@ function Order() {
                 </button>
               </form>
             </div>
-
           </div>
         </div>
       ) : (

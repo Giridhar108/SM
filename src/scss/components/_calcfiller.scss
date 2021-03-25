@@ -41,6 +41,9 @@
     justify-content: center;
     max-width: 545px;
     height: 420px;
+    width: 545px;
+    min-width: 545px;
+    margin-right: 8px;
   }
   &__description-content {
     display: flex;

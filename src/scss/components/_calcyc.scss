@@ -8,8 +8,15 @@
     font-size: 24px;
     line-height: 28px;
   }
-  &__wrapper-item {
+  &__items {
     margin-top: 24px;
+  }
+  &__item-svg {
+    display: flex;
+  }
+  &__wrapper-item {
+    width: 100%;
+
     padding: 16px;
     border-radius: 8px;
     background-color: $background;
@@ -26,7 +33,6 @@
     font-weight: 500;
     font-size: 15px;
     line-height: 18px;
-    display: flex;
     align-items: center;
     text-align: center;
   }
@@ -40,10 +46,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 8px;
     width: 160px;
     height: 36px;
     background: #ffd200;
     border-radius: 8px;
+  }
+  &__svg {
+    margin-left: 16px;
+  }
+  &__svg-resp {
+    display: none;
   }
   &__svg,
   &__item-count-plus,
@@ -77,7 +90,7 @@
     display: flex;
     justify-content: flex-end;
     margin-top: 16px;
-    margin-right: 16px;
+    margin-right: 64px;
   }
   &__item-count p {
     display: flex;

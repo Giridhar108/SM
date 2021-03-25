@@ -16,9 +16,13 @@
   .calckind {
     &__wrapper {
       justify-content: center;
+      flex-direction: column-reverse;
+    }
+    &__items {
+      margin: 0 auto;
     }
     &__png {
-      display: none;
+      margin-top: 8px;
     }
   }
 }
