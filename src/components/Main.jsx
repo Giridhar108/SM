@@ -7,10 +7,10 @@ import Fade from "react-reveal/Fade";
 import Roll from "react-reveal/Roll";
 import Zoom from "react-reveal/Zoom";
 
-import lamp from "../assets/images/lamp.png";
-import couchMain from "../assets/images/couchMain.png";
-import couchMainTwo from "../assets/images/couchMainTwo.png";
-import bedMainThree from "../assets/images/bedMainThree.png";
+import lamp from "../assets/images/lamp.webp";
+import couchMain from "../assets/images/couchMain.webp";
+import couchMainTwo from "../assets/images/couchMainTwo.webp";
+import bedMainThree from "../assets/images/bedMainThree.webp";
 
 
 function Main() {

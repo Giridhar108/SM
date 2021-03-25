@@ -1,14 +1,14 @@
 import React from "react";
 import FurnitureItems from "./FurnitureItems";
-import bed from "../assets/images/bed.png";
-import sofa from "../assets/images/sofa.png";
-import panel from "../assets/images/panel.png";
-import armchair from "../assets/images/armchair.png";
-import cheir from "../assets/images/cheir.png";
-import commode from "../assets/images/commode.png";
-import curbstone from "../assets/images/curbstone.png";
-import glass from "../assets/images/glass.png";
-import pouf from "../assets/images/pouf.png";
+import bed from "../assets/images/bed.webp";
+import sofa from "../assets/images/sofa.webp";
+import panel from "../assets/images/panel.webp";
+import armchair from "../assets/images/armchair.webp";
+import cheir from "../assets/images/cheir.webp";
+import commode from "../assets/images/commode.webp";
+import curbstone from "../assets/images/curbstone.webp";
+import glass from "../assets/images/glass.webp";
+import pouf from "../assets/images/pouf.webp";
 
 import CalcSofa from "../assets/images/kind/CalcKindSofa.png";
 import CalcArmchair from "../assets/images/kind/armchair.png";
@@ -28,47 +28,47 @@ const furnitureItems = [
   {
     title: "Кровать",
     img: bed,
-    png: CalcSofa,
+    webp: CalcSofa,
   },
   {
     title: "Диван",
     img: sofa,
-    png: CalcBed,
+    webp: CalcBed,
   },
   {
     title: "Панель",
     img: panel,
-    png: CalcDoublebed,
+    webp: CalcDoublebed,
   },
   {
     title: "Кресло",
     img: armchair,
-    png: CalcArmchair,
+    webp: CalcArmchair,
   },
   {
     title: "Стул",
     img: cheir,
-    png: CalcChair,
+    webp: CalcChair,
   },
   {
     title: "Комод",
     img: commode,
-    png: CalcChest,
+    webp: CalcChest,
   },
   {
     title: "Тумба",
     img: curbstone,
-    png: CalcNightstand,
+    webp: CalcNightstand,
   },
   {
     title: "Зеркало",
     img: glass,
-    png: CalcMirror,
+    webp: CalcMirror,
   },
   {
     title: "Пуф",
     img: pouf,
-    png: CalcPouf,
+    webp: CalcPouf,
   },
 ];
 
@@ -86,15 +86,15 @@ function CalcKind() {
 
         <h3 className="calckind__title">Выберите вид мебели:</h3>
         <div className="calckind__wrapper">
-          <div className="calckind__png">
+          <div className="calckind__webp">
             {furnitureItems.map((item) => {
               if (item.title === kind) {
                 return (
                   <Zoom key={item.title}>
                     <img
-                      src={item.png}
+                      src={item.webp}
                       alt=""
-                      className="calckind__png-img"
+                      className="calckind__webp-img"
                     />
                   </Zoom>
                 );

@@ -1,15 +1,15 @@
 import React from "react";
 import FurnitureItems from "./FurnitureItems";
-import bed from "../assets/images/bed.png";
-import sofa from "../assets/images/sofa.png";
-import panel from "../assets/images/panel.png";
-import armchair from "../assets/images/armchair.png";
-import cheir from "../assets/images/cheir.png";
-import commode from "../assets/images/commode.png";
-import curbstone from "../assets/images/curbstone.png";
-import glass from "../assets/images/glass.png";
-import pouf from "../assets/images/pouf.png";
-import pillow from "../assets/images/pillow.png";
+import bed from "../assets/images/bed.webp";
+import sofa from "../assets/images/sofa.webp";
+import panel from "../assets/images/panel.webp";
+import armchair from "../assets/images/armchair.webp";
+import cheir from "../assets/images/cheir.webp";
+import commode from "../assets/images/commode.webp";
+import curbstone from "../assets/images/curbstone.webp";
+import glass from "../assets/images/glass.webp";
+import pouf from "../assets/images/pouf.webp";
+import pillow from "../assets/images/pillow.webp";
 
 const furnitureItems = [
   {

@@ -1,6 +1,6 @@
 import React from "react";
-import kushetka from "../assets/images/kushetka.png";
-import aboutUsHorizont from "../assets/images/aboutUsHorizont.png";
+import kushetka from "../assets/images/kushetka.webp";
+import aboutUsHorizont from "../assets/images/aboutUsHorizont.webp";
 
 
 function AboutUs() {

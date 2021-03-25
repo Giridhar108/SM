@@ -1,9 +1,9 @@
 import React from "react";
 import Modal from "./Modal";
 import { useState } from "react";
-import armChairInd from "../assets/images/armChairInd.png";
-import redPufInd from "../assets/images/redPufInd.png";
-import blueCouchInd from "../assets/images/blueCouchInd.png";
+import armChairInd from "../assets/images/armChairInd.webp";
+import redPufInd from "../assets/images/redPufInd.webp";
+import blueCouchInd from "../assets/images/blueCouchInd.webp";
 
 function Indorder() {
   const [modalActive, setModalActive] = useState(false);

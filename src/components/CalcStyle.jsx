@@ -1,11 +1,11 @@
 import React from "react";
 import classNames from "classnames";
-import barroko from "../assets/images/barroko.png";
-import gothica from "../assets/images/gothica.png";
-import minimals from "../assets/images/minimals.png";
-import country from "../assets/images/country.png";
-import popArt from "../assets/images/popArt.png";
-import etnika from "../assets/images/etnika.png";
+import barroko from "../assets/images/barroko.webp";
+import gothica from "../assets/images/gothica.webp";
+import minimals from "../assets/images/minimals.webp";
+import country from "../assets/images/country.webp";
+import popArt from "../assets/images/popArt.webp";
+import etnika from "../assets/images/etnika.webp";
 
 import { useDispatch, useSelector } from "react-redux";
 import { setStyle } from "../redux/action/calculator";

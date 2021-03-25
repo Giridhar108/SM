@@ -1,6 +1,6 @@
 import React from "react";
-import TwoKindsArmChairOne from "../assets/images/TwoKindsArmChairOne.png";
-import TwoKindsArmChairTwo from "../assets/images/TwoKindsArmChairTwo.png";
+import TwoKindsArmChairOne from "../assets/images/TwoKindsArmChairOne.webp";
+import TwoKindsArmChairTwo from "../assets/images/TwoKindsArmChairTwo.webp";
 import { Link } from "react-router-dom";
 
 function TwoKinds() {

@@ -4,7 +4,7 @@ import Fade from "react-reveal/Fade";
 import Roll from "react-reveal/Roll";
 import Zoom from "react-reveal/Zoom";
 
-import calcMainImg from "../assets/images/calcMainImg.png";
+import calcMainImg from "../assets/images/calcMainImg.webp";
 
 function MainCalc() {
   return (

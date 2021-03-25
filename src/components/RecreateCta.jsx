@@ -2,7 +2,7 @@ import React from "react";
 import Modal from "./Modal";
 import { useState } from "react";
 import Zoom from "react-reveal/Zoom";
-import calcChairWhite from "../assets/images/calcChairWhite.png";
+import calcChairWhite from "../assets/images/calcChairWhite.webp";
 
 function RecreateCta() {
   const [modalActive, setModalActive] = useState(false);

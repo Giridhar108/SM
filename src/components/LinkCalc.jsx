@@ -3,8 +3,8 @@ import Modal from "./Modal";
 import { useState } from "react";
 import { Route, Link } from "react-router-dom";
 import Zoom from "react-reveal/Zoom";
-import calcChair from "../assets/images/calcChair.png";
-import calcChairWhite from "../assets/images/calcChairWhite.png";
+import calcChair from "../assets/images/calcChair.webp";
+import calcChairWhite from "../assets/images/calcChairWhite.webp";
 
 function LinkCalc() {
   const [modalActive, setModalActive] = useState(false);

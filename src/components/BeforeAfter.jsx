@@ -1,8 +1,8 @@
 import React from "react";
 import Modal from "./Modal";
 import { useState } from "react";
-import chairAfter from "../assets/images/chairAfter.png";
-import chairBefore from "../assets/images/chairBefore.png";
+import chairAfter from "../assets/images/chairAfter.webp";
+import chairBefore from "../assets/images/chairBefore.webp";
 
 function BeforeAfter() {
   const [modalActive, setModalActive] = useState(false);
