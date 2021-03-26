@@ -224,7 +224,7 @@ function footer() {
                   </div> */}
                 </li>
                 <li className="footer__contacts-policy">
-                  <a href="/Policy">Политика конфиденциальности</a>
+                  <Link to="/Policy">Политика конфиденциальности</Link>
                 </li>
                 <li>
                   <div className="footer__contacts-copyright">

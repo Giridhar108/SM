@@ -11,17 +11,17 @@ import { BrowserRouter } from "react-router-dom";
 
 const rootElement = document.getElementById("root");
 if (rootElement.hasChildNodes()) {
-  ReactDOM.render(<BrowserRouter>
+  render(<BrowserRouter>
     <Provider store={store}>
         <App/>
       </Provider>
   </BrowserRouter>, rootElement);
 } else {
-  ReactDOM.render(<BrowserRouter>
+  render(<BrowserRouter>
     <Provider store={store}>
         <App/>
       </Provider>
-  </BrowserRouter>, rootElement, rootElement.firstElementChild);
+  </BrowserRouter>, rootElement);
 }
 
 // ReactDOM.render(
