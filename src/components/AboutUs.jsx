@@ -2,25 +2,22 @@ import React from "react";
 import kushetka from "../assets/images/kushetka.webp";
 import aboutUsHorizont from "../assets/images/aboutUsHorizont.webp";
 
-
 function AboutUs() {
-
-  const [state, setstate] = React.useState(false)
+  const [state, setstate] = React.useState(false);
 
   React.useEffect(() => {
     const handleImg = () => {
       if (window.innerWidth <= 800) {
-        setstate(true)
+        setstate(true);
       }
       if (window.innerWidth > 800) {
-        setstate(false)
+        setstate(false);
       }
-    }
-    handleImg()
+    };
+    handleImg();
     window.addEventListener("resize", handleImg, { passive: false });
     return () => window.removeEventListener("resize", handleImg);
-
-  }, [state])
+  }, [state]);
 
   return (
     <div className="aboutus" id="aboutus">
