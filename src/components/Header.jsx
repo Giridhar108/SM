@@ -69,9 +69,11 @@ function Header() {
   }, [goingUp]);
 
   return (
-    <header className={classNames('header', {
-      'shadow-header': goingUp,
-    })}>
+    <header
+      className={classNames("header", {
+        "shadow-header": goingUp,
+      })}
+    >
       <div className="container">
         <div className="header__wrapper">
           <Fade right>
@@ -160,7 +162,7 @@ function Header() {
                             />
                           </svg>
                         </div>
-                        <div className="nav__logo-text">Spirit mebel</div>
+                        <div className="nav__logo-text">Soul mebel</div>
                       </div>
                     </div>
                   </div>

@@ -59,7 +59,7 @@ function footer() {
                     fill="#FFD200"
                   />
                 </svg>
-                <div className="footer__logo-text">Spirit mebel</div>
+                <div className="footer__logo-text">Soul mebel</div>
               </Link>
 
               <div className="footer__logo-subtitle">
@@ -108,7 +108,11 @@ function footer() {
                   <a href="tel:+79193304769">+7 919 330 47 69</a>
                 </li>
                 <li className="footer__contacts-social">
-                  <a className="footer__contacts-social-item" href="https://vk.com/public198337352" target="_blank">
+                  <a
+                    className="footer__contacts-social-item"
+                    href="https://vk.com/public198337352"
+                    target="_blank"
+                  >
                     <svg
                       width="32"
                       height="32"
@@ -128,7 +132,10 @@ function footer() {
                       />
                     </svg>
                   </a>
-                  <a className="footer__contacts-social-item" href="viber://chat?number=%2B9193304769">
+                  <a
+                    className="footer__contacts-social-item"
+                    href="viber://chat?number=%2B9193304769"
+                  >
                     <svg
                       width="32"
                       height="32"
@@ -228,7 +235,7 @@ function footer() {
                 </li>
                 <li>
                   <div className="footer__contacts-copyright">
-                    ©2020-2021 Spirit mebel. Все права защищены.
+                    ©2020-2021 Soul mebel. Все права защищены.
                   </div>
                 </li>
               </ul>
@@ -243,13 +250,12 @@ function footer() {
               </li>
 
               <li className="footer__contacts-end-social">
-                <a className="footer__contacts-social-item" href="https://vk.com/public198337352" target="_blank">
-                  <svg
-                    width="32"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    fill="none"
-                  >
+                <a
+                  className="footer__contacts-social-item"
+                  href="https://vk.com/public198337352"
+                  target="_blank"
+                >
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                     <path
                       d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z"
                       fill="#4D76A1"
@@ -262,13 +268,11 @@ function footer() {
                     />
                   </svg>
                 </a>
-                <a className="footer__contacts-social-item" href="viber://chat?number=%2B9193304769">
-                  <svg
-                    width="32"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    fill="none"
-                  >
+                <a
+                  className="footer__contacts-social-item"
+                  href="viber://chat?number=%2B9193304769"
+                >
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                     <path
                       d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z"
                       fill="#6F3FAA"
@@ -363,7 +367,7 @@ function footer() {
               </li>
               <li>
                 <div className="footer__contacts-end-copyright">
-                  ©2020-2021 Spirit mebel. Все права защищены.
+                  ©2020-2021 Soul mebel. Все права защищены.
                 </div>
               </li>
             </ul>
@@ -420,7 +424,7 @@ function footer() {
                   fill="#FFD200"
                 />
               </svg>
-              <div className="footer__logo-end-text">Spirit mebel</div>
+              <div className="footer__logo-end-text">Soul mebel</div>
             </a>
 
             <div className="footer__logo-end-subtitle">
