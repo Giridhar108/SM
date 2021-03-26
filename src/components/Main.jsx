@@ -83,7 +83,7 @@ function Main() {
                   </div>
                 </Roll>
                 <Pulse>
-                  <div className="main__logo-text">Soul mebel</div>
+                  <div className="main__logo-text">Spirit mebel</div>
                 </Pulse>
               </div>
               <Route path="/" exact>

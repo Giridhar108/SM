@@ -160,7 +160,7 @@ function Header() {
                             />
                           </svg>
                         </div>
-                        <div className="nav__logo-text">Soul mebel</div>
+                        <div className="nav__logo-text">Spirit mebel</div>
                       </div>
                     </div>
                   </div>
@@ -229,8 +229,8 @@ function Header() {
             </nav>
 
             <div className="pnone">
-              <a className="phone__number" href="tel:+79962283009">
-                <span>8 996 228 3009</span>
+              <a className="phone__number" href="tel:+79193304769">
+                <span>+7 919 330 47 69</span>
               </a>
               <div className="callback" onClick={setModal}>
                 Обратный звонок

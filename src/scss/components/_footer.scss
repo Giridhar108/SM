@@ -44,9 +44,10 @@
     font-family: Port Lligat Sans;
     font-style: normal;
     font-weight: normal;
-    font-size: 36px;
+    font-size: 34px;
     line-height: 39px;
     color: rgba(41, 22, 65, 1);
+    width: 100%;
   }
   &__logo-subtitle, &__logo-end-subtitle {
     max-width: 215px;
@@ -92,7 +93,7 @@
   &__contacts-end-social {
     justify-content: center;
   }
-  &__contacts-social-item, &__contacts-end-social-item {
+   &__contacts-social-item:nth-child(1) {
     margin-right: 8px;
   }
   &__contacts-policy, &__contacts-end-policy {
