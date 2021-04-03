@@ -38,7 +38,7 @@ function Order() {
     const items = orederItems().reduce((acc, item, i) => {
       acc[i] = item;
       return acc;
-    }, {});
+    }, {}).filter(items => items);
 
     const dataSent = {
       data,
