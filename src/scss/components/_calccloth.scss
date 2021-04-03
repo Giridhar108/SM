@@ -11,6 +11,7 @@
   &__wrapper {
     margin-top: 32px;
     display: flex;
+    justify-content: space-between;
   }
   &__image {
     position: relative;
@@ -23,6 +24,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 546px;
   }
   &__item {
     display: flex;

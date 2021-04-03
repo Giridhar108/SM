@@ -90,6 +90,7 @@ function CalcFiller() {
             })}
           </div>
 
+
           <div className="calcfiller__description">
             {fillerItem.map((item) => {
               if (item.name === filler) {
@@ -105,6 +106,7 @@ function CalcFiller() {
                 );
               }
             })}
+
             <div className="calcfiller__description-content">
               {fillerItem.map((item) => {
                 if (item.name === filler) {
