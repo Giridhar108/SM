@@ -35,10 +35,12 @@ function Order() {
   };
 
   const onSubmit = (data, e) => {
+
+    console.log(orederItems())
     const items = orederItems().reduce((acc, item, i) => {
       acc[i] = item;
       return acc;
-    }, {}).filter(items => items);
+    }, {});
 
     const dataSent = {
       data,
